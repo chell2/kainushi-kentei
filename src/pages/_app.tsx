@@ -1,15 +1,8 @@
-// import '../styles/globals.css'
-// import type { AppProps } from 'next/app'
-
-// function MyApp({ Component, pageProps }: AppProps) {
-//   return <Component {...pageProps} />
-// }
-
-// export default MyApp
-
+import 'tailwindcss/tailwind.css'
 import { MantineProvider } from '@mantine/core'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import Layout from '@/components/layout';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props
@@ -20,7 +13,6 @@ export default function App(props: AppProps) {
         <title>Page title</title>
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
       </Head>
-
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
@@ -29,7 +21,9 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </MantineProvider>
     </>
   )
