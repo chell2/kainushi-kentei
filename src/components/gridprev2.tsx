@@ -1,12 +1,12 @@
 import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
 
-const seconddata = [
-  { title: '6位', text:'正解率19%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '7位', text:'正解率21%', quiz:'猫の長寿履歴は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '8位', text:'正解率22%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '9位', text:'正解率26%', quiz:'猫の長寿履歴は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '10位', text:'正解率30%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' }
+const data = [
+  { title: '難易度🔥🔥🔥', text:'正解率19%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
+  { title: '難易度🔥🔥', text:'正解率21%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
+  { title: '難易度🔥', text:'正解率22%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
+  { title: '難易度🔥', text:'正解率26%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
+  { title: '難易度🔥', text:'正解率30%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' }
 ]
 
 const useStyles = createStyles((theme) => ({
@@ -15,8 +15,9 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
     fontWeight: 700,
+    textAlign: 'center'
   },
 
   item: {
@@ -40,7 +41,7 @@ const useStyles = createStyles((theme) => ({
 export default function GridPrevSecond() {
   const { classes, theme } = useStyles();
 
-  const seconditems = seconddata.map((item) => (
+  const loweritems = data.map((item) => (
     <UnstyledButton key={item.title} className={classes.item}>
       <Group position="apart">
         <Text size="md" weight="bold" mt={1}>
@@ -60,7 +61,7 @@ export default function GridPrevSecond() {
   return (
     <Card withBorder radius="md" className={classes.card}>
       <SimpleGrid cols={1} mt="md">
-        {seconditems}
+        {loweritems}
       </SimpleGrid>
     </Card>
   );

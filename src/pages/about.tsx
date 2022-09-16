@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+import GridAbout from '@/components/gridabout'
+import GridHowto from '@/components/gridhowto'
 
 const About: NextPage = () => {
   return (
@@ -9,10 +10,8 @@ const About: NextPage = () => {
         <title>飼い主検定とは｜飼い主検定</title>
       </Head>
       <main>
-        <h1>飼い主検定とは</h1>
-        <Link href="/">
-        <a>もどる</a>
-      </Link>
+        <GridHowto />
+        <GridAbout />
       </main>
     </div>
   );

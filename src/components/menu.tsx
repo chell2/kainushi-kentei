@@ -1,21 +1,15 @@
-import { createStyles, Header, Menu, Group, Center, Burger, Container } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
-import Image from 'next/image'
-import { useState } from 'react'
-import logo from 'public/logo.png'
+import { createStyles, Header, Container, Anchor, Group, Burger } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { useState } from 'react';
+
+const HEADER_HEIGHT = 65;
 
 const useStyles = createStyles((theme) => ({
   inner: {
-    height: 56,
+    height: HEADER_HEIGHT,
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
-  },
-
-  links: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
+    justifyContent: 'space-between',
   },
 
   burger: {
@@ -24,81 +18,80 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  link: {
-    display: 'block',
-    lineHeight: 1,
-    padding: '8px 12px',
-    borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
+  links: {
+    paddingTop: theme.spacing.lg,
+    height: HEADER_HEIGHT,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
 
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
     },
   },
 
-  linkLabel: {
-    marginRight: 5,
+  mainLinks: {
+    marginRight: -theme.spacing.sm,
+  },
+
+  mainLink: {
+    textTransform: 'uppercase',
+    fontSize: 13,
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[6],
+    padding: `7px ${theme.spacing.sm}px`,
+    fontWeight: 700,
+    borderBottom: '2px solid transparent',
+    transition: 'border-color 100ms ease, color 100ms ease',
+
+    '&:hover': {
+      color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+      textDecoration: 'none',
+    },
+  },
+
+  mainLinkActive: {
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+    borderBottomColor: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 5 : 6],
   },
 }));
 
-interface HeaderSearchProps {
-  links: { link: string; label: string; links: { link: string; label: string }[] }[];
+interface LinkProps {
+  label: string;
+  link: string;
 }
 
-export default function HeaderMenu({ links }: HeaderSearchProps) {
+interface HeaderMenuProps {
+  mainLinks: LinkProps[];
+}
+
+export default function HeaderMenu({ mainLinks }: HeaderMenuProps) {
   const [opened, { toggle }] = useDisclosure(false);
-  const { classes } = useStyles();
+  const { classes, cx } = useStyles();
+  const [active, setActive] = useState(0);
 
-  const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
-
-    if (menuItems) {
-      return (
-        <Menu key={link.label} trigger="hover" exitTransitionDuration={0}>
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                {/* <IconChevronDown size={12} stroke={1.5} /> */}
-              </Center>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      );
-    }
-
-    return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={classes.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </a>
-    );
-  });
+  const mainItems = mainLinks.map((item, index) => (
+    <Anchor<'a'>
+      href={item.link}
+      key={item.label}
+      className={cx(classes.mainLink, { [classes.mainLinkActive]: index === active })}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive(index);
+      }}
+    >
+      {item.label}
+    </Anchor>
+  ));
 
   return (
-    <Header height={56} mb={120}>
-      <Container>
-        <div className={classes.inner}>
-          {/* <MantineLogo size={28} /> */}
-          <Group spacing={5} className={classes.links}>
-            {items}
+    <Header height={HEADER_HEIGHT} mb={0}>
+      <Container className={classes.inner}>
+        <div className={classes.links}>
+          <Group spacing={0} position="center" className={classes.mainLinks}>
+            {mainItems}
           </Group>
-          <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
         </div>
+        <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
       </Container>
     </Header>
   );

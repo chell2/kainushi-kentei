@@ -1,12 +1,11 @@
+import { Tabs } from '@mantine/core'
 import Image from 'next/image'
-import {useRouter} from "next/router"
-import {ReactNode} from 'react'
+import { useRouter } from 'next/router'
+import { ReactNode } from 'react'
 import PageTop from '@/components/affix'
-import Button from '@/components/button'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
-import HeaderMenu from '@/components/menu'
-import bgimage from 'public/1000_F_506342106.jpeg'
+import bgimage from 'public/1000_F_506342106_01.png'
 
 type Props = { children: ReactNode }
 
@@ -15,17 +14,16 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <div>
-        <div className="w-96 bg-white mx-auto my-0">
+        <div className="w-screen md:w-5/12 bg-white mx-auto my-0">
           <Header />
-          <div className="flex">
-            <span className="flex-auto" />
-            <Button onClick={() => router.push("/")}>今日の問題</Button>
-            <span className="flex-auto" />
-            <Button onClick={() => router.push("/backnumber")}>過去の問題</Button>
-            <span className="flex-auto" />
-            <Button onClick={() => router.push("/about")}>飼い主検定とは</Button>
-            <span className="flex-auto" />
-          </div>
+          <div className="flex mb-2" />
+          <Tabs color="cyan" defaultValue="menu1">
+            <Tabs.List grow position="apart">
+              <Tabs.Tab value="menu1" onClick={() => router.push("/")}><p className="font-title">今日の問題</p></Tabs.Tab>
+              <Tabs.Tab value="menu2" onClick={() => router.push("/backnumber")}><p className="font-title">過去の問題</p></Tabs.Tab>
+              <Tabs.Tab value="menu3" onClick={() => router.push("/about")}><p className="font-title">あそびかた</p></Tabs.Tab>
+            </Tabs.List>
+          </Tabs>
           {children}
           <Footer links={[{
             "link": "https://www.vanishing-company.site/",

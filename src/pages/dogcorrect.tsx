@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import GridNewDog from '@/components/gridnewdog'
+import DogCorrect from '@/components/dogcorrect'
 
 const DogQuiz: NextPage = () => {
   return (
@@ -9,7 +9,7 @@ const DogQuiz: NextPage = () => {
         <title>犬の検定｜飼い主検定</title>
       </Head>
       <main>
-        <GridNewDog />
+        <DogCorrect />
       </main>
     </div>
   );

@@ -1,19 +1,25 @@
-import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
-import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { StarIcon } from '@heroicons/react/24/solid'
+import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group } from '@mantine/core'
 import Link from 'next/link'
+library.add(faCat, faDog)
 
-const mockdata = [
-  { title: 'DOG', text: '犬の検定', icon: StarIcon, color: 'grape', link: '/dogquiz' },
-  { title: 'CAT', text:'猫の検定', icon: FaceSmileIcon, color: 'indigo', link: '/catquiz' }
+const data = [
+  { title: 'DOG', text: '犬の検定', icon: faDog, color: 'grape', link: '/dogquiz' },
+  { title: 'CAT', text:'猫の検定', icon: faCat, color: 'indigo', link: '/catquiz' }
 ]
 
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    borderColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    paddingBottom: 100,
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
     fontWeight: 700,
   },
 
@@ -23,10 +29,12 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    borderRadius: theme.radius.md,
-    height: 90,
+    borderRadius: theme.radius.lg,
+    height: 140,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     transition: 'box-shadow 150ms ease, transform 100ms ease',
+    fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
+    boxShadow: `${theme.shadows.xs} !important`,
 
     '&:hover': {
       boxShadow: `${theme.shadows.md} !important`,
@@ -39,29 +47,26 @@ const useStyles = createStyles((theme) => ({
 export default function Grid() {
   const {classes, theme} = useStyles();
 
-  const items = mockdata.map((item) => (
+  const items = data.map((item) => (
     <Link key={item.link} href={item.link} passHref>
-    <UnstyledButton component="a" key={item.title} className={classes.item}>
-      <item.icon color={theme.colors[item.color][6]}  />
-      <Text size="sm" weight="bold" mt={1}>
-        {item.title}
-      </Text>
-      <Text size="xs" mt={0} mb={4}>
-        {item.text}
-      </Text>
+      <UnstyledButton component="a" key={item.title} className={classes.item} mt={8}>
+        <FontAwesomeIcon icon={item.icon} size="3x" color={theme.colors[item.color][6]} />
+        <Text size="sm" weight="bold" mt={6} mb={0}>
+          {item.title}
+        </Text>
+        <Text size="xs">
+          {item.text}
+        </Text>
       </UnstyledButton>
-      </Link>
+    </Link>
   ));
 
   return (
     <Card withBorder radius="md" className={classes.card}>
-      <Group position="apart">
-        <Text className={classes.title}>今日の問題にチャレンジ!!!!!</Text>
-        {/* <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
-          + 21 other services
-        </Anchor> */}
-      </Group>
-      <SimpleGrid cols={2} mt="md">
+      {/* <Group position="apart" >
+        <Text className={classes.title}>今日の検定にチャレンジ!!!!!</Text>
+      </Group> */}
+      <SimpleGrid cols={2}>
         {items}
       </SimpleGrid>
     </Card>

@@ -2,12 +2,12 @@ import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
 import Acc from '@/components/accordion'
 
-const firstdata = [
-  { title: '1位', text:'正解率5%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '2位', text:'正解率8%', quiz:'猫の長寿履歴は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '3位', text:'正解率10%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '4位', text:'正解率15%', quiz:'猫の長寿履歴は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '5位', text:'正解率16%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' }
+const data = [
+  { title: '難易度🔥🔥🔥🔥🔥', text:'正解率5%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
+  { title: '難易度🔥🔥🔥🔥🔥', text:'正解率8%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
+  { title: '難易度🔥🔥🔥🔥🔥', text:'正解率10%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
+  { title: '難易度🔥🔥🔥🔥', text:'正解率15%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
+  { title: '難易度🔥🔥🔥🔥', text:'正解率16%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' }
 ]
 
 const useStyles = createStyles((theme) => ({
@@ -16,8 +16,9 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
     fontWeight: 700,
+    textAlign: 'center'
   },
 
   item: {
@@ -41,14 +42,14 @@ const useStyles = createStyles((theme) => ({
 export default function GridPrev() {
   const { classes, theme } = useStyles();
 
-  const firstitems = firstdata.map((item) => (
+  const upperitems = data.map((item) => (
     <UnstyledButton key={item.title} className={classes.item}>
       <Group position="apart">
         <Text size="md" weight="bold" mt={1}>
           {item.title}
         </Text>
-        <Anchor size="sm" color="dimmed" sx={{ lineHeight: 1 }}>
-          {item.text}
+        <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
+          （{item.text}）
         </Anchor>
       </Group>
       <item.icon color={theme.colors[item.color][4]}  />
@@ -62,7 +63,7 @@ export default function GridPrev() {
     <Card withBorder radius="md" className={classes.card}>
       <Text className={classes.title}>難問にチャレンジ🔥</Text>
       <SimpleGrid cols={1} mt="md">
-        {firstitems}
+        {upperitems}
       </SimpleGrid>
       <Acc />
     </Card>

@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import GridPrev from '@/components/gridprev'
 
 const Backnumber: NextPage = () => {
@@ -11,9 +10,6 @@ const Backnumber: NextPage = () => {
       </Head>
       <main>
         <GridPrev />
-        <Link href="/">
-          <a>もどる</a>
-        </Link>
       </main>
     </div>
   );
