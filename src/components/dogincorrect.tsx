@@ -55,7 +55,7 @@ export default function DogCorrect() {
     <>
       <Card withBorder radius="md" className={classes.card}>
         <Group position="apart">
-          <Text className={classes.title}>犬の検定正解！</Text>
+          <Text className={classes.title}>不正解！</Text>
           <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
           <HandThumbUpIcon className="h-5 w-5 text-purple-500" />
           </Anchor>

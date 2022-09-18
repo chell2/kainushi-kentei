@@ -5,12 +5,13 @@ import { StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group, Container,Center,Button } from '@mantine/core';
 import Link from 'next/link'
 // import Button from '@/components/button'
+import router from 'next/router';
 import RadioButton from '@/components/radio'
 library.add(faCat, faDog)
 
 
 const data = [
-  {title: 'DOG', text: '犬の検定', quiz:'犬も鼻くそをほじる？', icon: faDog, color: 'grape', link: '/dogquiz'}
+  {title: 'DOG', text: 'Zen Maru Gothic', quiz:'犬も鼻くそをほじる？', icon: faDog, color: 'grape', link: '/dogquiz'}
 ]
 
 const useStyles = createStyles((theme) => ({
@@ -64,13 +65,13 @@ export default function GridNewDog() {
         <Container size="xs" px="xs">
           <RadioButton />
           <Center py="lg">
-            <Button color="cyan" radius="lg">解答する</Button>
-          </Center>
-        </Container>
+            {/* <Button type="submit" color="cyan" radius="lg" >解答する</Button> */}
+        </Center>
+      </Container>
       </Card>
-      <Link href="/catquiz">
+      {/* <Link href="/catquiz">
         <a> ▷ 猫の検定へ</a>
-      </Link>
+      </Link> */}
     </>
   );
 }

@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `メイリオ, ${theme.fontFamily}`,
+    fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
     fontWeight: 700
   },
 

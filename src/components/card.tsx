@@ -34,7 +34,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
 }));
 
-function Card() {
+function CardDemo() {
   const { classes } = useStyles();
 
   return (
@@ -44,4 +44,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default CardDemo;
