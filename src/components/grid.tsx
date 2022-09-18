@@ -1,7 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { StarIcon } from '@heroicons/react/24/solid'
 import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group } from '@mantine/core'
 import Link from 'next/link'
 library.add(faCat, faDog)

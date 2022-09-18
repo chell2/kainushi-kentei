@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import GridPrev from '@/components/gridprev'
+import GridPrev from '@/components/prev_first'
 
 const Backnumber: NextPage = () => {
   return (

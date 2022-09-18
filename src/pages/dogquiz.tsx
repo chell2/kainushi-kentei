@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import GridNewDog from '@/components/gridnewdog'
+import GridNewDog from '@/components/today_dog'
 
 const DogQuiz: NextPage = () => {
   return (

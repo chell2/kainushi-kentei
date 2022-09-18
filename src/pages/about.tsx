@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import GridAbout from '@/components/gridabout'
-import GridHowto from '@/components/gridhowto'
+import GridAbout from '@/components/about_about'
+import GridHowto from '@/components/about_howto'
 
 const About: NextPage = () => {
   return (

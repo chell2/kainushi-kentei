@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import ArticleCardFooter from '@/components/card_dogcorrect'
+import ArticleCardFooter from '@/components/answercard'
 
 const DogQuiz: NextPage = () => {
   
@@ -8,7 +8,7 @@ const DogQuiz: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>犬の検定｜飼い主検定</title>
+        <title>猫の検定｜飼い主検定</title>
       </Head>
       <main>
         <ArticleCardFooter
@@ -17,8 +17,8 @@ const DogQuiz: NextPage = () => {
           title={'正解！！！'}
           footer={''}
           author={{
-            name: '答え : ❸鼻くそが溜まらない',
-            description: '解説 : 犬の鼻には人間のような鼻毛が生えていないため、健康な状態であれば鼻くそは溜まりません。ゴミが入った場合はクシャミをしたり、鼻の奥に運ばれて飲み込んだり口から排出します。もし鼻くそが溜まっている場合は風邪をひいて鼻水がたくさん出ている可能性があるので要注意です。',
+            name: '答え : ❸38歳',
+            description: '解説 : ギネスに登録されている歴代最高齢の猫は、アメリカテキサス州で飼育されていたクリーム・パフちゃん。1967年8月3日〜2005年8月6日の「38年3日」生きた記録は未だに破られていません。',
             image: ''
           }}
         />

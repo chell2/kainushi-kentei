@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import ArticleCardFooter from '@/components/card_dogcorrect'
+import ArticleCardFooter from '@/components/answercard'
 
 const DogQuiz: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>犬の検定｜飼い主検定</title>
+        <title>猫の検定｜飼い主検定</title>
       </Head>
       <main>
         <ArticleCardFooter

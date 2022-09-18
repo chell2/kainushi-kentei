@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import ArticleCardFooter from '@/components/card_dogcorrect'
+import ArticleCardFooter from '@/components/answercard'
 
 const DogQuiz: NextPage = () => {
   return (

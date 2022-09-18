@@ -68,6 +68,7 @@ export default function ArticleCardFooter({
           <Text size="xs" color="dimmed">
             {footer}
           </Text>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=飼い主検定&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #LoveTwitter</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           <Group spacing={0}>
             <ActionIcon>
               <FontAwesomeIcon icon={faTwitter} />

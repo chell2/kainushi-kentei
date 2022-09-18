@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
-import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
-import RadioButton from '@/components/radio'
+import { createStyles, Card, Text, SimpleGrid, Container } from '@mantine/core';
+import RadioButton from '@/components/radio_dog'
 library.add(faCat, faDog)
 
 
@@ -52,10 +52,8 @@ export default function GridNewDog() {
         <SimpleGrid cols={1} mt="md">
           {items}
         </SimpleGrid>
-        <Container size="xs" px="xs">
+        <Container size="sm" px="xs">
           <RadioButton />
-          <Center py="lg">
-        </Center>
       </Container>
       </Card>
     </>
