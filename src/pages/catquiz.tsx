@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import GridNewCat from '@/components/gridnewcat'
 
-const CatQuiz: NextPage = () => {
+const DogQuiz: NextPage = () => {
   return (
     <div>
       <Head>
@@ -15,4 +15,4 @@ const CatQuiz: NextPage = () => {
   );
 };
 
-export default CatQuiz;
+export default DogQuiz;

@@ -1,11 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
-import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group, Container,Center,Button } from '@mantine/core';
-import Link from 'next/link'
-// import Button from '@/components/button'
-import router from 'next/router';
+import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
 import RadioButton from '@/components/radio'
 library.add(faCat, faDog)
 
@@ -35,17 +30,12 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     transition: 'box-shadow 150ms ease, transform 100ms ease',
     boxShadow: `${theme.shadows.xs} !important`
-
-    // '&:hover': {
-    //   boxShadow: `${theme.shadows.md} !important`,
-    //   transform: 'scale(1.05)',
-    // },
   },
 }));
 
 
 export default function GridNewDog() {
-  const {classes, theme} = useStyles();
+  const {classes} = useStyles();
 
   const items = data.map((item) => (
       <Card key={item.title} className={classes.item}>
@@ -65,13 +55,9 @@ export default function GridNewDog() {
         <Container size="xs" px="xs">
           <RadioButton />
           <Center py="lg">
-            {/* <Button type="submit" color="cyan" radius="lg" >解答する</Button> */}
         </Center>
       </Container>
       </Card>
-      {/* <Link href="/catquiz">
-        <a> ▷ 猫の検定へ</a>
-      </Link> */}
     </>
   );
 }

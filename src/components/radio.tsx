@@ -5,7 +5,7 @@ import { useState } from 'react'
 export default function RadioButton() {
   const [value, setValue] = useState('react')
   const test001 = () => {
-    var answer = "react";
+    var answer = "1";
     if (value == answer) {
       console.log("正解");
       router.push("/dogcorrect")
