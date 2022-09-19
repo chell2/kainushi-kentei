@@ -2,7 +2,7 @@ import { Accordion } from '@mantine/core';
 import { useState } from 'react';
 import GridPrevSecond from '@/components/prev_more'
 
-export default function Acc() {
+export default function More() {
   const [value, setValue] = useState<string | null>(null);
 
   return (

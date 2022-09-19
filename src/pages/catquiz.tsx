@@ -1,6 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
-import { createStyles, Card, Text, SimpleGrid, Container } from '@mantine/core';
+import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Choices from '@/components/radio_cat'
@@ -51,14 +51,14 @@ const CatQuiz: NextPage = (props:any) => {
       </Head>
       <main>
         <Card withBorder radius="md" className={classes.card}>
-          <Text>猫の検定</Text>
+          <Text><p className="font-title">猫の検定</p></Text>
           <SimpleGrid cols={1} mt="md">
             <Card>
-              <Text size="md" weight="bold" mt={1}>
-                <p className="font-title">
-                  {props.data[0]["question"]}
-                </p>
-              </Text>
+              <Center>
+                <Text size="md" weight="bold" mt={1}>
+                  <p className="font-title">{props.data[0]["question"]}</p>
+                </Text>
+              </Center>
             </Card>
           </SimpleGrid>
           <Container size="sm" px="xs">

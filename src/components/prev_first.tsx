@@ -1,6 +1,6 @@
 import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
-import Acc from '@/components/accordion'
+import More from '@/components/accordion'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -33,15 +33,28 @@ const useStyles = createStyles((theme) => ({
 
 export default function GridPrev(props: any) {
   console.log(props.props.data)
+  console.log(props.props.data[0])
   
   const {classes, theme} = useStyles();
-  
+  const Prev = props.props.data
+
   return (
     <>
-          {props.props.data.map((item: any) => {
-            <Text>{item.answer}</Text>
-        })}
-      
+      <Text>{Prev[0].question}</Text>
+      <Text>{Prev[0].answer}</Text><br/>
+      <Text>{Prev[1].question}</Text>
+      <Text>{Prev[1].answer}</Text><br/>
+      <Text>{Prev[2].question}</Text>
+      <Text>{Prev[2].answer}</Text><br />
+      <Text>{Prev[3].question}</Text>
+      <Text>{Prev[3].answer}</Text><br />
+      {/* <Text>{Prev5.question}</Text>
+      <Text>{Prev6.question}</Text>
+      <Text>{Prev7.question}</Text>
+      <Text>{Prev8.question}</Text>
+      <Text>{Prev9.question}</Text>
+      <Text>{Prev10.question}</Text> */}
+      <More />
     </>
   )
     

@@ -2,10 +2,10 @@ import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
 
 const data = [
-  { title: '難易度🔥🔥🔥', text:'正解率19%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '難易度🔥🔥', text:'正解率21%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '難易度🔥', text:'正解率22%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '難易度🔥', text:'正解率26%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
+  { title: '難易度🔥🔥🔥🔥🔥', text:'正解率19%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
+  { title: '難易度🔥🔥🔥🔥', text:'正解率21%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
+  { title: '難易度🔥🔥🔥', text:'正解率22%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
+  { title: '難易度🔥🔥', text:'正解率26%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
   { title: '難易度🔥', text:'正解率30%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' }
 ]
 

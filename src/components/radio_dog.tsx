@@ -7,19 +7,21 @@ export default function Choices({choice1, choice2, choice3, answer, commentary}:
   const [value, setValue] = useState('react')
   const sendAnswer = () => {
     if (value == answer) {
+      const category = '犬の検定'
       const judge = '正解'
       router.push(
         {
           pathname: "/dogans",
-          query: {value,answer,commentary,judge}
+          query: {category, value, answer, judge, commentary}
         }
       )
     } else {
+      const category = '犬の検定'
       const judge = '不正解'
       router.push(
         {
           pathname: "/dogans",
-          query: {value,answer,commentary,judge}
+          query: {category, value, answer, judge, commentary}
         }
       )
     }

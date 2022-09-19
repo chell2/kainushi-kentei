@@ -8,7 +8,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
   },
 
   footer: {
@@ -22,7 +22,7 @@ const useStyles = createStyles((theme) => ({
 
 interface ArticleCardProps {
   image: any;
-  category: string;
+  category: any;
   title: any;
   footer: string;
   author: {
@@ -55,10 +55,10 @@ export default function ArticleCard({
 
       <Group mt="lg">
         <div>
+          <Avatar src={author.image} radius="sm" />
           <Text weight={500}>
             答え：　{author.name}
           </Text>
-          <Avatar src={author.image} radius="sm" />
           <Text size="xs" color="dimmed">
             解説：　{author.description}
           </Text>
@@ -70,7 +70,7 @@ export default function ArticleCard({
           <Text size="xs" color="dimmed">
             {footer}
           </Text>
-          <a href="https://twitter.com/intent/tweet?button_hashtag=飼い主検定&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #LoveTwitter</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+          <a href="https://twitter.com/intent/tweet?button_hashtag=飼い主検定&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #飼い主検定</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           <Group spacing={0}>
             <ActionIcon>
               <FontAwesomeIcon icon={faTwitter} />
