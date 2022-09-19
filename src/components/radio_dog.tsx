@@ -13,7 +13,7 @@ export default function Choices({choice1, choice2, choice3, answer, commentary}:
         {
           pathname: "/dogans",
           query: {category, value, answer, judge, commentary}
-        }
+        },"judge"
       )
     } else {
       const category = '犬の検定'
@@ -22,7 +22,7 @@ export default function Choices({choice1, choice2, choice3, answer, commentary}:
         {
           pathname: "/dogans",
           query: {category, value, answer, judge, commentary}
-        }
+        },"judge"
       )
     }
   }

@@ -38,7 +38,12 @@ export default function PrevFirst(props: any) {
   const router = useRouter()
   
   const firstPrevItems = Prev.map((data: any) => (
-    <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push("/quiz")}>
+    <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
+      {
+        pathname: "/preview",
+        query: data
+      },"preview"
+    )}>
       <Group position="apart">
         <Text size="md" weight="bold" mt={1}>
           難易度
@@ -82,7 +87,6 @@ export default function PrevFirst(props: any) {
       <More />
     </>
   )
-    
 }
 
 function elseif(arg0: boolean) {
