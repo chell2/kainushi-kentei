@@ -1,16 +1,30 @@
 import { Radio,Button, Center } from '@mantine/core'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-export default function RadioButton({choice1, choice2, choice3, answer}: any) {
+export default function Choices({choice1, choice2, choice3, answer, commentary}: any) {
+  const router = useRouter()
   const [value, setValue] = useState('react')
-  const test001 = () => {
+  const sendAnswer = () => {
     if (value == answer) {
-      router.push("/catcorrect")
-    }else{
-        router.push("/catincorrect")
+      const judge = '正解'
+      router.push(
+        {
+          pathname: "/catans",
+          query: {value,answer,commentary,judge}
+        }
+      )
+    } else {
+      const judge = '不正解'
+      router.push(
+        {
+          pathname: "/catans",
+          query: {value,answer,commentary,judge}
+        }
+      )
     }
   }
+
   return (
     <>
       <Radio.Group
@@ -24,7 +38,7 @@ export default function RadioButton({choice1, choice2, choice3, answer}: any) {
         <Radio name="Ques" value={choice3} label={choice3} />
       </Radio.Group>
       <Center py="lg">
-        <Button onClick={test001} color="cyan" radius="lg" >解答する</Button>
+        <Button onClick={sendAnswer} color="cyan" radius="lg" >解答する</Button>
       </Center>
     </>
   );

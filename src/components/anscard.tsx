@@ -1,6 +1,6 @@
 import { faTwitter, faInstagram, faTiktok, faLine } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {createStyles, Card, Image, ActionIcon, Group, Text, Avatar, Badge} from '@mantine/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { createStyles, Card, Image, ActionIcon, Group, Text, Avatar, Badge } from '@mantine/core'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -20,25 +20,25 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface ArticleCardFooterProps {
-  image: string;
+interface ArticleCardProps {
+  image: any;
   category: string;
-  title: string;
+  title: any;
   footer: string;
   author: {
-    name: string;
-    description: string;
-    image: string;
+    name: any;
+    description: any;
+    image: any;
   };
 }
 
-export default function ArticleCardFooter({
+export default function ArticleCard({
   image,
   category,
   title,
   footer,
   author,
-}: ArticleCardFooterProps) {
+}: ArticleCardProps) {
   const { classes, theme } = useStyles();
 
   return (
@@ -54,11 +54,13 @@ export default function ArticleCardFooter({
       </Text>
 
       <Group mt="lg">
-        <Avatar src={author.image} radius="sm" />
         <div>
-          <Text weight={500}>{author.name}</Text>
+          <Text weight={500}>
+            答え：　{author.name}
+          </Text>
+          <Avatar src={author.image} radius="sm" />
           <Text size="xs" color="dimmed">
-            {author.description}
+            解説：　{author.description}
           </Text>
         </div>
       </Group>

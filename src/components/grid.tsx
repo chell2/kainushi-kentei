@@ -61,7 +61,7 @@ export default function Grid() {
   ));
 
   return (
-    <Card withBorder radius="md" className={classes.card}>
+    <Card withBorder radius="md" className={classes.card} >
       {/* <Group position="apart" >
         <Text className={classes.title}>今日の検定にチャレンジ!!!!!</Text>
       </Group> */}

@@ -3,7 +3,7 @@ import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { createStyles, Card, Text, SimpleGrid, Container } from '@mantine/core';
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import RadioButton from '@/components/radio_cat_old'
+import Choices from '@/components/radio_cat'
 library.add(faCat, faDog)
 
 const useStyles = createStyles((theme) => ({
@@ -50,21 +50,21 @@ const CatQuiz: NextPage = (props:any) => {
         <title>猫の検定｜飼い主検定</title>
       </Head>
       <main>
-      <Card withBorder radius="md" className={classes.card}>
-        <Text>猫の検定</Text>
-        <SimpleGrid cols={1} mt="md">
-        <Card>
-        <Text size="md" weight="bold" mt={1}>
-          <p className="font-title">
-            {props.data[0]["question"]}
-          </p>
-        </Text>
-      </Card>
-        </SimpleGrid>
-      <Container size="sm" px="xs">
-          <RadioButton choice1={props.data[0]["choice001"]} choice2={props.data[0]["choice002"]} choice3={props.data[0]["choice003"]} answer={props.data[0]["answer"]} />
-      </Container>
-      </Card>
+        <Card withBorder radius="md" className={classes.card}>
+          <Text>猫の検定</Text>
+          <SimpleGrid cols={1} mt="md">
+            <Card>
+              <Text size="md" weight="bold" mt={1}>
+                <p className="font-title">
+                  {props.data[0]["question"]}
+                </p>
+              </Text>
+            </Card>
+          </SimpleGrid>
+          <Container size="sm" px="xs">
+            <Choices choice1={props.data[0]["choice001"]} choice2={props.data[0]["choice002"]} choice3={props.data[0]["choice003"]} answer={props.data[0]["answer"]} commentary={props.data[0]["commentary"]} />
+          </Container>
+        </Card>
       </main>
     </div>
   );
