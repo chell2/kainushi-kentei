@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group } from '@mantine/core'
+import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group, Center } from '@mantine/core'
 import Link from 'next/link'
 library.add(faCat, faDog)
 
@@ -62,9 +62,9 @@ export default function Grid() {
 
   return (
     <Card withBorder radius="md" className={classes.card} >
-      {/* <Group position="apart" >
-        <Text className={classes.title}>今日の検定にチャレンジ!!!!!</Text>
-      </Group> */}
+      <Center >
+        <Text className={classes.title}>今日の問題にチャレンジ!!!!</Text>
+      </Center>
       <SimpleGrid cols={2}>
         {items}
       </SimpleGrid>
