@@ -48,15 +48,15 @@ export default function PrevFirst(props: any) {
           難易度
           {
             (() => {
-                if (10 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                if (10 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
                   return <p>🔥🔥🔥🔥🔥</p>
-                else if (20 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                else if (20 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
                   return <p>🔥🔥🔥🔥</p>
-                else if (40 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                else if (40 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
                   return <p>🔥🔥🔥</p>
-                else if (60 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                else if (60 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
                   return <p>🔥🔥</p>
-                else if (100 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                else if (100 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
                   return <p>🔥</p>
               else return <p>🔥🔥🔥🔥🔥</p>
             })()
@@ -64,7 +64,7 @@ export default function PrevFirst(props: any) {
         </Text>
         <Anchor size="xs" color="dimmed">
           正解率 {(data.correct_count / data.accesses_count * 100)
-            ? Math.round(data.correct_count / data.accesses_count * 100)/10
+            ? (Math.round(data.correct_count / data.accesses_count * 1000))/10
             : '0' }%
         </Anchor>
       </Group>
