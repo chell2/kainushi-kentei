@@ -62,7 +62,7 @@ const DogQuiz: NextPage = (props:any) => {
             </Card>
           </SimpleGrid>
           <Container size="sm" px="xs">
-            <Choices choice1={props.data[0]["choice001"]} choice2={props.data[0]["choice002"]} choice3={props.data[0]["choice003"]} answer={props.data[0]["answer"]} commentary={props.data[0]["commentary"]} />
+            <Choices choice1={props.data[0]["choice001"]} choice2={props.data[0]["choice002"]} choice3={props.data[0]["choice003"]} answer={props.data[0]["answer"]} commentary={props.data[0]["commentary"]} id={props.data[0]["id"]} />
           </Container>
         </Card>
       </main>

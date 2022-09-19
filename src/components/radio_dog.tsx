@@ -2,13 +2,15 @@ import { Radio, Button, Center } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-export default function Choices({choice1, choice2, choice3, answer, commentary}: any) {
+export default function Choices({choice1, choice2, choice3, answer, commentary, id}: any) {
   const router = useRouter()
   const [value, setValue] = useState('react')
-  const sendAnswer = () => {
+  const sendAnswer = async () => {
     if (value == answer) {
       const category = '犬の検定'
       const judge = '正解'
+      const res = await fetch(`api/update/sendform?type=dog&id=` + id + "&result=" + judge)
+      const data = await res.json()
       router.push(
         {
           pathname: "/dogans",
@@ -18,6 +20,8 @@ export default function Choices({choice1, choice2, choice3, answer, commentary}:
     } else {
       const category = '犬の検定'
       const judge = '不正解'
+      const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judge)
+      const data = await res.json()
       router.push(
         {
           pathname: "/dogans",
@@ -35,7 +39,7 @@ export default function Choices({choice1, choice2, choice3, answer, commentary}:
         orientation="vertical"
         spacing="sm"
       >
-        <Radio name="Ques" value={choice1} label={choice1} color="cyan" defaultChecked/>
+        <Radio name="Ques" value={choice1} label={choice1} color="cyan"/>
         <Radio name="Ques" value={choice2} label={choice2} color="cyan"/>
         <Radio name="Ques" value={choice3} label={choice3} color="cyan"/>
       </Radio.Group>

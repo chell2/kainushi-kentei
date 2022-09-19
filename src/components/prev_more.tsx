@@ -38,8 +38,9 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function PrevMore() {
-  const { classes, theme } = useStyles();
+export default function PrevMore(props: any) {
+  const {classes, theme} = useStyles()
+  console.log(props)
 
   const loweritems = data.map((item) => (
     <UnstyledButton key={item.title} className={classes.item}>

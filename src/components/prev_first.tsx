@@ -1,5 +1,4 @@
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
-import Link from 'next/link'
 import {useRouter} from 'next/router';
 import More from '@/components/accordion'
 
