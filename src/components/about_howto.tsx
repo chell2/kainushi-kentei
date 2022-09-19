@@ -1,7 +1,7 @@
-import { createStyles, Card, Text, SimpleGrid, UnstyledButton } from '@mantine/core';
+import { createStyles, Card, Text, SimpleGrid } from '@mantine/core';
 
 const data = [
-  {text: '「今日の問題」から "犬の検定" または "猫の検定" が選べます。日替わりでクイズが出題されるので、３択から正解を選んで回答してね！' }
+  { text: '「今日の問題」から "犬の検定" または "猫の検定" が選べます。日替わりでクイズが出題されるので、３択から正解を選んで回答してね！' }
 ]
 
 const useStyles = createStyles((theme) => ({
@@ -28,15 +28,15 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function GridHowto() {
+export default function Howto() {
   const {classes, theme} = useStyles();
 
   const items = data.map((item) => (
-    <UnstyledButton component="a" key={item.text} className={classes.item}>
+    <Card key={item.text} className={classes.item}>
       <Text size="xs" mt={0} mb={4}>
         {item.text}
       </Text>
-    </UnstyledButton>
+    </Card>
   ));
 
   return (

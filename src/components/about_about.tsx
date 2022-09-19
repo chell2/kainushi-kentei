@@ -1,4 +1,4 @@
-import { createStyles, Card, Text, SimpleGrid, UnstyledButton } from '@mantine/core';
+import { createStyles, Card, Text, SimpleGrid } from '@mantine/core';
 
 const data = [
   { text: '飼い主さんに知っておいてほしい事柄をクイズにしました。ケガや病気になった後で、「もっと早く気付けていたら… 」そんな後悔をする飼い主さんを１人でも減らせたら嬉しいです。ぜひTwitterでシェアしてください！' }
@@ -29,15 +29,15 @@ const useStyles = createStyles((theme) => ({
 }));
 
 
-export default function GridAbout() {
+export default function About() {
   const {classes, theme} = useStyles();
 
   const items = data.map((item) => (
-    <UnstyledButton component="a" key={item.text} className={classes.item}>
+    <Card key={item.text} className={classes.item}>
       <Text size="xs" mt={0} mb={4}>
         {item.text}
       </Text>
-    </UnstyledButton>
+    </Card>
   ));
 
   return (
