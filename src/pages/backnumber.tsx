@@ -1,6 +1,7 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import PrevFirst from '@/components/prev_first'
+import PrevMore from '@/components/prev_more'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch('https://animal-police.sub.jp/kainusikentei_backend/archive.php')
@@ -21,6 +22,7 @@ const Backnumber: NextPage = (props) => {
       </Head>
       <main>
         <PrevFirst props={props} />
+        <PrevMore props={props} />
       </main>
     </div>
   );

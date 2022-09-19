@@ -39,11 +39,11 @@ const PrevQuiz: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>犬の検定｜飼い主検定</title>
+        <title>過去の問題｜飼い主検定</title>
       </Head>
       <main>
         <Card withBorder radius="md" className={classes.card}>
-          <Text><p className="font-title">犬の検定（過去問）</p></Text>
+          <Text><p className="font-title">過去の問題：犬（or 猫）の検定</p></Text>
           <SimpleGrid cols={1} mt="md">
             <Card>
               <Center>

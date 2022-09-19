@@ -1,13 +1,6 @@
-import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
-import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
-
-const data = [
-  { title: '難易度🔥🔥🔥🔥🔥', text:'正解率19%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '難易度🔥🔥🔥🔥', text:'正解率21%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '難易度🔥🔥🔥', text:'正解率22%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' },
-  { title: '難易度🔥🔥', text:'正解率26%', quiz:'猫の長寿ギネス記録は何歳？', icon: FaceSmileIcon, color: 'indigo'},
-  { title: '難易度🔥', text:'正解率30%', quiz:'犬も鼻くそをほじる？', icon: StarIcon, color: 'grape' }
-]
+import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group, Accordion } from '@mantine/core'
+import {useRouter} from 'next/router'
+import {useState} from 'react'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -36,34 +29,66 @@ const useStyles = createStyles((theme) => ({
       transform: 'scale(1.05)',
     },
   },
-}));
+}))
 
 export default function PrevMore(props: any) {
   const {classes, theme} = useStyles()
-  console.log(props)
-
-  const loweritems = data.map((item) => (
-    <UnstyledButton key={item.title} className={classes.item}>
+  const [value, setValue] = useState<string | null>(null)
+  const router = useRouter()
+  const array = props.props.data
+  const secondHalf = array.slice(5)
+  
+  const morePrevItems = secondHalf.map((data:any) => (
+    <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
+      {
+        pathname: "/preview",
+        query: data
+      },"preview"
+    )}>
       <Group position="apart">
         <Text size="md" weight="bold" mt={1}>
-          {item.title}
+          難易度
+          {
+            (() => {
+                if (10 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                  return <p>🔥🔥🔥🔥🔥</p>
+                else if (20 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                  return <p>🔥🔥🔥🔥</p>
+                else if (40 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                  return <p>🔥🔥🔥</p>
+                else if (60 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                  return <p>🔥🔥</p>
+                else if (100 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
+                  return <p>🔥</p>
+              else return <p>🔥🔥🔥🔥🔥</p>
+            })()
+          }
         </Text>
-        <Anchor size="sm" color="dimmed" sx={{ lineHeight: 1 }}>
-          {item.text}
+        <Anchor size="xs" color="dimmed">
+          正解率 {(data.correct_count / data.accesses_count * 100)
+            ? Math.round(data.correct_count / data.accesses_count * 100)/10
+            : '0' }%
         </Anchor>
       </Group>
-      {/* <item.icon color={theme.colors[item.color][4]}  /> */}
+      {/* <data.icon color={theme.colors[item.color][4]}  /> */}
       <Text size="sm" mt={0} mb={4}>
-        {item.quiz}
+        {data.question}
       </Text>
     </UnstyledButton>
-  ));
+  ))
 
   return (
-    <Card withBorder radius="md" className={classes.card}>
-      <SimpleGrid cols={1} mt="md">
-        {loweritems}
-      </SimpleGrid>
-    </Card>
-  );
+    <Accordion value={value} onChange={setValue}>
+      <Accordion.Item value="item-1">
+        <Accordion.Control>もっと見る</Accordion.Control>
+        <Accordion.Panel>
+          <Card withBorder radius="md" className={classes.card}>
+            <SimpleGrid cols={1} mt="md">
+              {morePrevItems}
+            </SimpleGrid>
+          </Card>
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion>
+  )
 }

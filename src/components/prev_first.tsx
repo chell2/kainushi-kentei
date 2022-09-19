@@ -1,6 +1,5 @@
-import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
-import {useRouter} from 'next/router';
-import More from '@/components/accordion'
+import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group } from '@mantine/core'
+import {useRouter} from 'next/router'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -29,14 +28,15 @@ const useStyles = createStyles((theme) => ({
       transform: 'scale(1.05)',
     },
   },
-}));
+}))
 
 export default function PrevFirst(props: any) {
-  const {classes, theme} = useStyles();
-  const Prev = props.props.data
+  const {classes, theme} = useStyles()
   const router = useRouter()
+  const array = props.props.data
+  const firstHalf = array.slice(0, 5)
   
-  const firstPrevItems = Prev.map((data: any) => (
+  const firstPrevItems = firstHalf.map((data: any) => (
     <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
       {
         pathname: "/preview",
@@ -48,15 +48,15 @@ export default function PrevFirst(props: any) {
           難易度
           {
             (() => {
-                if (10 >= (data.correct_count / data.accesses_count * 100))
+                if (10 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
                   return <p>🔥🔥🔥🔥🔥</p>
-                else if (20 >= (data.correct_count / data.accesses_count * 100))
+                else if (20 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
                   return <p>🔥🔥🔥🔥</p>
-                else if (40 >= (data.correct_count / data.accesses_count * 100))
+                else if (40 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
                   return <p>🔥🔥🔥</p>
-                else if (60 >= (data.correct_count / data.accesses_count * 100))
+                else if (60 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
                   return <p>🔥🔥</p>
-                else if (100 >= (data.correct_count / data.accesses_count * 100))
+                else if (100 >= Math.round(data.correct_count / data.accesses_count * 100)/10)
                   return <p>🔥</p>
               else return <p>🔥🔥🔥🔥🔥</p>
             })()
@@ -64,7 +64,7 @@ export default function PrevFirst(props: any) {
         </Text>
         <Anchor size="xs" color="dimmed">
           正解率 {(data.correct_count / data.accesses_count * 100)
-            ? (data.correct_count / data.accesses_count * 100)
+            ? Math.round(data.correct_count / data.accesses_count * 100)/10
             : '0' }%
         </Anchor>
       </Group>
@@ -73,7 +73,7 @@ export default function PrevFirst(props: any) {
         {data.question}
       </Text>
     </UnstyledButton>
-  ));
+  ))
 
   return (
     <>
@@ -83,11 +83,10 @@ export default function PrevFirst(props: any) {
           {firstPrevItems} 
         </SimpleGrid>
       </Card>
-      <More />
     </>
   )
 }
 
 function elseif(arg0: boolean) {
-  throw new Error('Function not implemented.');
+  throw new Error('Function not implemented.')
 }
