@@ -1,6 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import GridPrev from '@/components/prev_first'
+import PrevFirst from '@/components/prev_first'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch('https://animal-police.sub.jp/kainusikentei_backend/archive.php')
@@ -20,7 +20,7 @@ const Backnumber: NextPage = (props) => {
         <title>過去のクイズ｜飼い主検定</title>
       </Head>
       <main>
-        <GridPrev props={props} />
+        <PrevFirst props={props} />
       </main>
     </div>
   );

@@ -1,5 +1,6 @@
-import {StarIcon, FaceSmileIcon } from '@heroicons/react/24/solid';
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group} from '@mantine/core';
+import Link from 'next/link'
+import {useRouter} from 'next/router';
 import More from '@/components/accordion'
 
 const useStyles = createStyles((theme) => ({
@@ -31,31 +32,59 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function GridPrev(props: any) {
-  console.log(props.props.data)
-  console.log(props.props.data[0])
-  
+export default function PrevFirst(props: any) {
   const {classes, theme} = useStyles();
   const Prev = props.props.data
+  const router = useRouter()
+  
+  const firstPrevItems = Prev.map((data: any) => (
+    <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push("/quiz")}>
+      <Group position="apart">
+        <Text size="md" weight="bold" mt={1}>
+          難易度
+          {
+            (() => {
+                if (10 >= (data.correct_count / data.accesses_count * 100))
+                  return <p>🔥🔥🔥🔥🔥</p>
+                else if (20 >= (data.correct_count / data.accesses_count * 100))
+                  return <p>🔥🔥🔥🔥</p>
+                else if (40 >= (data.correct_count / data.accesses_count * 100))
+                  return <p>🔥🔥🔥</p>
+                else if (60 >= (data.correct_count / data.accesses_count * 100))
+                  return <p>🔥🔥</p>
+                else if (100 >= (data.correct_count / data.accesses_count * 100))
+                  return <p>🔥</p>
+              else return <p>🔥🔥🔥🔥🔥</p>
+            })()
+          }
+        </Text>
+        <Anchor size="xs" color="dimmed">
+          正解率 {(data.correct_count / data.accesses_count * 100)
+            ? (data.correct_count / data.accesses_count * 100)
+            : '0' }%
+        </Anchor>
+      </Group>
+      {/* <data.icon color={theme.colors[item.color][4]}  /> */}
+      <Text size="sm" mt={0} mb={4}>
+        {data.question}
+      </Text>
+    </UnstyledButton>
+  ));
 
   return (
     <>
-      <Text>{Prev[0].question}</Text>
-      <Text>{Prev[0].answer}</Text><br/>
-      <Text>{Prev[1].question}</Text>
-      <Text>{Prev[1].answer}</Text><br/>
-      <Text>{Prev[2].question}</Text>
-      <Text>{Prev[2].answer}</Text><br />
-      <Text>{Prev[3].question}</Text>
-      <Text>{Prev[3].answer}</Text><br />
-      {/* <Text>{Prev5.question}</Text>
-      <Text>{Prev6.question}</Text>
-      <Text>{Prev7.question}</Text>
-      <Text>{Prev8.question}</Text>
-      <Text>{Prev9.question}</Text>
-      <Text>{Prev10.question}</Text> */}
+      <Card withBorder radius="md" className={classes.card}>
+        <Text className={classes.title}>難問にチャレンジ💪</Text>
+        <SimpleGrid cols={1} mt="md">
+          {firstPrevItems} 
+        </SimpleGrid>
+      </Card>
       <More />
     </>
   )
     
+}
+
+function elseif(arg0: boolean) {
+  throw new Error('Function not implemented.');
 }

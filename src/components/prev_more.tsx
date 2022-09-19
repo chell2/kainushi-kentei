@@ -38,7 +38,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function GridPrevSecond() {
+export default function PrevMore() {
   const { classes, theme } = useStyles();
 
   const loweritems = data.map((item) => (
@@ -51,7 +51,7 @@ export default function GridPrevSecond() {
           {item.text}
         </Anchor>
       </Group>
-      <item.icon color={theme.colors[item.color][4]}  />
+      {/* <item.icon color={theme.colors[item.color][4]}  /> */}
       <Text size="sm" mt={0} mb={4}>
         {item.quiz}
       </Text>
