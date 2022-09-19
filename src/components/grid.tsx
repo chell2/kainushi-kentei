@@ -62,7 +62,7 @@ export default function Grid() {
 
   return (
     <Card withBorder radius="md" className={classes.card} >
-      <Center >
+      <Center>
         <Text className={classes.title}>今日の問題にチャレンジ!!!!</Text>
       </Center>
       <SimpleGrid cols={2}>
