@@ -9,7 +9,7 @@ export default function Choices({choice1, choice2, choice3, answer, commentary, 
     if (value == answer) {
       const category = '犬の検定'
       const judge = '正解'
-      const res = await fetch(`api/update/sendform?type=dog&id=` + id + "&result=" + judge)
+      const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judge)
       const data = await res.json()
       router.push(
         {

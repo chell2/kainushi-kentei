@@ -1,6 +1,6 @@
 import { createStyles, Container, Group, Anchor } from '@mantine/core'
 import Image from 'next/image'
-import logo from 'public/logo_a.png'
+import logo from 'public/logo_footer.png'
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -41,7 +41,7 @@ export default function Footer({ links }: FooterProps) {
       color="dimmed"
       key={link.label}
       href={link.link}
-      onClick={(event) => event.preventDefault()}
+      // onClick={(event) => event.preventDefault()}
       size="xs"
     >
       {link.label}

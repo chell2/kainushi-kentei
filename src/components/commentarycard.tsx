@@ -1,6 +1,8 @@
 import { faTwitter, faInstagram, faTiktok, faLine } from '@fortawesome/free-brands-svg-icons'
+import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { createStyles, Card, Image, ActionIcon, Group, Text, Avatar, Badge } from '@mantine/core'
+import { createStyles, Card, ActionIcon, Group, Text, Badge, Grid, Center } from '@mantine/core'
+import Image from 'next/image'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -25,43 +27,53 @@ interface ArticleCardProps {
   category: any;
   title: any;
   footer: string;
-  author: {
-    name: any;
+  commentary: {
+    answer: any;
     description: any;
     image: any;
+    icon: any;
   };
 }
 
-export default function ArticleCard({
+export default function CommentaryCard({
   image,
   category,
   title,
   footer,
-  author,
+  commentary,
 }: ArticleCardProps) {
   const { classes, theme } = useStyles();
 
   return (
     <Card withBorder p="lg" radius="md" className={classes.card}>
       <Card.Section mb="sm">
-        <Image src={image} alt={title} height={180} />
+        <Image src={image} alt={title}/>
       </Card.Section>
 
-      <Badge>{category}</Badge>
+      {/* <Badge>{category}</Badge> */}
 
       <Text weight={700} className={classes.title} mt="xs">
         {title}
       </Text>
+      <Text weight={500} className={classes.title} mt="xs">
+        答え：　{commentary.answer}
+      </Text>
 
-      <Group mt="lg">
+      <Group mt="lg" mb="lg">
         <div>
-          <Avatar src={author.image} radius="sm" />
-          <Text weight={500}>
-            答え：　{author.name}
-          </Text>
-          <Text size="xs" color="dimmed">
-            解説：　{author.description}
-          </Text>
+          <Grid>
+            <Grid.Col span={3}>
+              <Center mt="sm">
+                <Image src={commentary.image} alt={title} width={64} height={64} />
+              </Center>
+            </Grid.Col>
+            <Grid.Col span={9} pl="0" pr="xs">
+              <Badge color="cyan"><FontAwesomeIcon icon={faPaperclip} /> 解説</Badge>
+              <Text size="sm" color="dark.4">
+                {commentary.description}
+              </Text>
+            </Grid.Col>
+          </Grid>
         </div>
       </Group>
 

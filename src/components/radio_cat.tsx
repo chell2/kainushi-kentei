@@ -15,7 +15,7 @@ export default function Choices({choice1, choice2, choice3, answer, commentary, 
         {
           pathname: "/catans",
           query: {category, value, answer, judge, commentary}
-        }
+        },"judge"
       )
     } else {
       const category = '猫の検定'
@@ -26,7 +26,7 @@ export default function Choices({choice1, choice2, choice3, answer, commentary, 
         {
           pathname: "/catans",
           query: {category, value, answer, judge, commentary}
-        }
+        },"judge"
       )
     }
   }
