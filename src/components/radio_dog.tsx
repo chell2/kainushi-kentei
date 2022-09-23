@@ -9,7 +9,9 @@ export default function Choices({choice1, choice2, choice3, answer, commentary, 
     if (value == answer) {
       const category = '犬の検定'
       const judgment = '正解'
-      const judgeImg = '/dog_correct.png'
+      const judgeImgs = ['/dog_correct.png', '/dog_correct2.png', '/dog_correct3.png']
+      const num = Math.floor(Math.random() * 3)
+      const judgeImg = judgeImgs[num]
       const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judgment)
       const data = await res.json()
       router.push(
@@ -21,7 +23,9 @@ export default function Choices({choice1, choice2, choice3, answer, commentary, 
     } else {
       const category = '犬の検定'
       const judgment = '不正解'
-      const judgeImg = '/dog_incorrect.png'
+      const judgeImgs = ['/dog_incorrect.png', '/dog_incorrect2.png', '/dog_incorrect3.png']
+      const num = Math.floor(Math.random() * 3)
+      const judgeImg = judgeImgs[num]
       const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judgment)
       const data = await res.json()
       router.push(
