@@ -1,11 +1,22 @@
 import 'tailwindcss/tailwind.css'
 import { MantineProvider } from '@mantine/core'
+import type { NextPage } from 'next'
 import { AppProps } from 'next/app'
-import Head from 'next/head'
 
-export default function App(props: AppProps) {
+import Head from 'next/head'
+import type { ReactElement, ReactNode } from 'react'
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function App(props: AppPropsWithLayout) {
   const { Component, pageProps } = props
-  const getLayout = Component.getLayout || ((page: any) => page)
+  const getLayout = Component.getLayout ?? ((page: any) => page)
 
   return getLayout(
     <>

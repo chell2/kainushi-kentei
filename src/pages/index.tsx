@@ -1,9 +1,9 @@
-import type {NextPage} from 'next'
 import Head from 'next/head'
+import type { NextPageWithLayout } from './_app'
 import Grid from '@/components/grid'
 import TopLayout from '@/components/layout_top'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <div>
       <Head>

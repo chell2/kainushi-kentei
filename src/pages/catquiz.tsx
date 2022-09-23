@@ -1,8 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
-import type { GetServerSideProps, NextPage } from 'next'
+import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/layout'
 import Choices from '@/components/radio_cat'
 library.add(faCat, faDog)
@@ -42,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const CatQuiz: NextPage = (props:any) => {
+const CatQuiz: NextPageWithLayout = (props:any) => {
   const {classes} = useStyles();
 
   return (

@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
+import type { NextPageWithLayout } from './_app'
 import GridAbout from '@/components/about_about'
 import GridHowto from '@/components/about_howto'
 import Layout from '@/components/layout'
 
-const About: NextPage = () => {
+const About: NextPageWithLayout = () => {
   return (
     <div>
       <Head>

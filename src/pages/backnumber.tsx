@@ -1,5 +1,6 @@
-import type { GetServerSideProps, NextPage } from 'next'
+import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/layout'
 import PrevFirst from '@/components/prev_first'
 import PrevMore from '@/components/prev_more'
@@ -15,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-const Backnumber: NextPage = (props) => {
+const Backnumber: NextPageWithLayout = (props) => {
   return (
     <div>
       <Head>

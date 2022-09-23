@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import type { NextPageWithLayout } from './_app'
 import CommentaryCard from '@/components/commentarycard'
 import Layout from '@/components/layout'
 import commentatorImg from 'public/cat_commentator.png'
 
-const CatAns: NextPage = () => {
+const CatAns: NextPageWithLayout = () => {
   const router = useRouter()
 
   return (
