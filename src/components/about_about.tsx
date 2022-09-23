@@ -23,7 +23,7 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'center',
     textAlign: 'left',
     borderRadius: theme.radius.md,
-    height: 110,
+    height: 150,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
   },
 }));
@@ -34,7 +34,7 @@ export default function About() {
 
   const items = data.map((item) => (
     <Card key={item.text} className={classes.item}>
-      <Text size="xs" mt={0} mb={4}>
+      <Text size="sm" mt={0} mb={4}>
         {item.text}
       </Text>
     </Card>

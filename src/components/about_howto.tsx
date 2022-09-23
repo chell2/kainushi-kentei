@@ -33,7 +33,7 @@ export default function Howto() {
 
   const items = data.map((item) => (
     <Card key={item.text} className={classes.item}>
-      <Text size="xs" mt={0} mb={4}>
+      <Text size="sm" mt={0} mb={4}>
         {item.text}
       </Text>
     </Card>
