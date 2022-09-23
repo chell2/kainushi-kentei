@@ -20,7 +20,7 @@ const Backnumber: NextPageWithLayout = (props) => {
   return (
     <div>
       <Head>
-        <title>過去のクイズ｜飼い主検定</title>
+        <title>過去の問題｜飼い主検定</title>
       </Head>
       <main>
         <PrevFirst props={props} />
