@@ -6,7 +6,7 @@ import PageTop from '@/components/affix'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import HeaderImg from '@/components/headerimage'
-import bgimage from 'public/1000_F_506342106_01.png'
+import bgimage from 'public/img_background.png'
 
 type Props = { children: ReactNode }
 
