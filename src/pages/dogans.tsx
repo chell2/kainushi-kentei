@@ -23,7 +23,7 @@ const DogAns: NextPage = () => {
             description: router.query.commentary,
             image: commentatorImg,
             icon: 'faDog',
-            commentator: '犬岡 明美'
+            commentator: '犬山 三郎'
           }}
         />
       </main>

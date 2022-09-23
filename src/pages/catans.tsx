@@ -23,7 +23,7 @@ const CatAns: NextPage = () => {
             description: router.query.commentary,
             image: commentatorImg,
             icon: 'faCat',
-            commentator: '猫宮 三郎'
+            commentator: '猫宮 明美'
           }}
         />
       </main>
