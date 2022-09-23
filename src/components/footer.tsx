@@ -5,7 +5,7 @@ import logo from 'public/logo_footer.png'
 const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: 0,
-    paddingBottom: 200,
+    paddingBottom: 500,
     borderTop: `1px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,

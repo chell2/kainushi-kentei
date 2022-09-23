@@ -39,7 +39,7 @@ const TopLayout = ({ children }: Props) => {
       </div>
       <PageTop />
       <div className={`fixed top-0 left-0 w-full h-screen z-[-1]`}>
-      <Image src={bgimage} alt='bgimage' layout='fill' objectFit='cover' />
+      <Image src={bgimage} alt='bgimage' width='1000' height='791' objectFit='cover' />
       </div>
     </>
   );
