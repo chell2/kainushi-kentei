@@ -32,6 +32,7 @@ interface ArticleCardProps {
     description: any;
     image: any;
     icon: any;
+    commentator: any;
   };
 }
 
@@ -47,15 +48,15 @@ export default function CommentaryCard({
   return (
     <Card withBorder p="lg" radius="md" className={classes.card}>
       <Card.Section mb="sm">
-        <Image src={image} alt={title}/>
+        <Image src={image} alt={title} layout="responsive" width={1600} height={900} />
       </Card.Section>
 
       {/* <Badge>{category}</Badge> */}
-
-      <Text weight={700} className={classes.title} mt="xs">
+      {/* <Text weight={700} className={classes.title} mt="xs">
         {title}
-      </Text>
-      <Text weight={500} className={classes.title} mt="xs">
+      </Text> */}
+      
+      <Text weight={500} className={classes.title} mt="lg">
         答え：　{commentary.answer}
       </Text>
 
@@ -63,8 +64,11 @@ export default function CommentaryCard({
         <div>
           <Grid>
             <Grid.Col span={3}>
-              <Center mt="sm">
-                <Image src={commentary.image} alt={title} width={64} height={64} />
+              <Center mt="xs">
+                <Image src={commentary.image} alt={'commentator'} width={64} height={64} />
+              </Center>
+              <Center mt="xs">
+                <Text size="xs" color="dimmed">解説者：<br/>{commentary.commentator}</Text>
               </Center>
             </Grid.Col>
             <Grid.Col span={9} pl="0" pr="xs">

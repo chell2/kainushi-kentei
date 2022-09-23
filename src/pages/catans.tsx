@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import CommentaryCard from '@/components/commentarycard'
-import correctImg from '/public/dog_correct.png'
 import commentatorImg from 'public/cat_commentator.png'
 
 const CatAns: NextPage = () => {
@@ -15,15 +14,16 @@ const CatAns: NextPage = () => {
       </Head>
       <main>
         <CommentaryCard
-          image={correctImg}
+          image={router.query.judgeImg}
           category={router.query.category}
-          title={router.query.judge}
+          title={router.query.judgment}
           footer={''}
           commentary={{
             answer: router.query.answer,
             description: router.query.commentary,
             image: commentatorImg,
-            icon: 'faCat'
+            icon: 'faCat',
+            commentator: '猫宮 三郎'
           }}
         />
       </main>

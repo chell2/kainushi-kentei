@@ -8,25 +8,27 @@ export default function Choices({choice1, choice2, choice3, answer, commentary, 
   const sendAnswer = async () => {
     if (value == answer) {
       const category = '犬の検定'
-      const judge = '正解'
-      const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judge)
+      const judgment = '正解'
+      const judgeImg = '/dog_correct.png'
+      const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judgment)
       const data = await res.json()
       router.push(
         {
           pathname: "/dogans",
-          query: {category, value, answer, judge, commentary}
-        },"judge"
+          query: {category, value, answer, judgment, judgeImg, commentary}
+        },"judgment"
       )
     } else {
       const category = '犬の検定'
-      const judge = '不正解'
-      const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judge)
+      const judgment = '不正解'
+      const judgeImg = '/dog_incorrect.png'
+      const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judgment)
       const data = await res.json()
       router.push(
         {
           pathname: "/dogans",
-          query: {category, value, answer, judge, commentary}
-        },"judge"
+          query: {category, value, answer, judgment, judgeImg, commentary}
+        },"judgment"
       )
     }
   }
