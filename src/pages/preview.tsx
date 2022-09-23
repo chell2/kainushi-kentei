@@ -3,7 +3,8 @@ import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
+import Layout from '@/components/layout'
 import Choices from '@/components/radio_dog'
 library.add(faCat, faDog)
 
@@ -63,3 +64,11 @@ const PrevQuiz: NextPage = () => {
 };
 
 export default PrevQuiz;
+
+PrevQuiz.getLayout = function getLayout(page: any) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}

@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import CommentaryCard from '@/components/commentarycard'
+import Layout from '@/components/layout'
 import commentatorImg from 'public/dog_commentator.png'
 
 const DogAns: NextPage = () => {
@@ -32,3 +33,11 @@ const DogAns: NextPage = () => {
 };
 
 export default DogAns;
+
+DogAns.getLayout = function getLayout(page: any) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}

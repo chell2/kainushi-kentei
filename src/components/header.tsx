@@ -1,6 +1,6 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
-import titleImage from 'public/1000_F_397493111.jpeg'
+// import titleImage from 'public/1000_F_397493111.jpeg'
 
 const Header = () => {
   return (
@@ -15,7 +15,7 @@ const Header = () => {
           </Link>
           </h1>
       </div>
-      <Image alt="titleImage" src={titleImage} layout="responsive" width={500} height={396} />
+      {/* <Image alt="titleImage" src={titleImage} layout="responsive" width={500} height={396} /> */}
     </>
   );
 };

@@ -2,12 +2,12 @@ import 'tailwindcss/tailwind.css'
 import { MantineProvider } from '@mantine/core'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import Layout from '@/components/layout';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props
+  const getLayout = Component.getLayout || ((page: any) => page)
 
-  return (
+  return getLayout(
     <>
       <Head>
         <title>Page title</title>
@@ -21,10 +21,8 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </MantineProvider>
-    </>
+      </>
   )
 }

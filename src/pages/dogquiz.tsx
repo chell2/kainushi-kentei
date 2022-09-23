@@ -3,6 +3,7 @@ import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
+import Layout from '@/components/layout'
 import Choices from '@/components/radio_dog'
 library.add(faCat, faDog)
 
@@ -71,3 +72,11 @@ const DogQuiz: NextPage = (props:any) => {
 };
 
 export default DogQuiz;
+
+DogQuiz.getLayout = function getLayout(page: any) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}

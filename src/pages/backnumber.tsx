@@ -1,5 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
+import Layout from '@/components/layout'
 import PrevFirst from '@/components/prev_first'
 import PrevMore from '@/components/prev_more'
 
@@ -29,3 +30,11 @@ const Backnumber: NextPage = (props) => {
 };
 
 export default Backnumber;
+
+Backnumber.getLayout = function getLayout(page: any) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}

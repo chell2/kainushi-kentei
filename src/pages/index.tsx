@@ -1,6 +1,7 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import Grid from '@/components/grid'
+import TopLayout from '@/components/layout_top'
 
 const Home: NextPage = () => {
   return (
@@ -16,3 +17,11 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+Home.getLayout = function getLayout(page: any) {
+  return (
+    <TopLayout>
+      {page}
+    </TopLayout>
+  )
+}
