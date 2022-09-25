@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import CommonMeta from '../components/CommonMeta'
 import type { NextPageWithLayout } from './_app'
 import CommentaryCard from '@/components/commentarycard'
 import Layout from '@/components/layout'
@@ -14,7 +13,6 @@ const DogAns: NextPageWithLayout = () => {
       <Head>
         <title>犬の検定｜飼い主検定</title>
       </Head>
-      <CommonMeta />
       <main>
         <CommentaryCard
           image={router.query.judgeImg}

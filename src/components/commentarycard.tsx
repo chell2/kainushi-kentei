@@ -83,15 +83,16 @@ export default function CommentaryCard({
       </Group>
 
       <Card.Section className={classes.footer}>
-        <Group position="apart">
-          <Text size="xs" color="dimmed">
+        {/* <Group position="apart"> */}
+          {/* <Text size="xs" color="dimmed">
             {footer}
-          </Text>
+          </Text> */}
+          <Center>
           <Button
             component="a"
             target="_blank"
             rel="noopener noreferrer"
-            href="http://twitter.com/intent/tweet?text=正解！明日もがんばろう&url=https://kainushi-kentei.vercel.app/judgment&via=chell2282&related=chell2282&hashtags=飼い主検定"
+            href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/judgment&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
             // leftIcon={}
             styles={(theme) => ({
               root: {
@@ -113,8 +114,9 @@ export default function CommentaryCard({
               related={["Kill_In_Sun", "GatsbyJS"]} hashtags={['飼い主検定']}>
               <Group><TwitterIcon size={24} />ツイートする</Group>
             </TwitterShareButton> */}
-          </Button>
-          <Group spacing={0}>
+            </Button>
+            </Center>
+          {/* <Group spacing={0}>
             <ActionIcon>
               <FontAwesomeIcon icon={faTwitter} />
             </ActionIcon>
@@ -127,8 +129,8 @@ export default function CommentaryCard({
             <ActionIcon>
               <FontAwesomeIcon icon={faLine} />
             </ActionIcon>
-          </Group> 
-        </Group>
+          </Group>  */}
+        {/* </Group> */}
       </Card.Section>
     </Card>
   );
