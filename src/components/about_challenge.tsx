@@ -1,7 +1,7 @@
 import { createStyles, Card, Text, SimpleGrid } from '@mantine/core';
 
 const data = [
-  { text: '犬や猫に関するクイズが毎日１問出題されるよ！「今日の問題」から “犬の検定” または “猫の検定” を選んでね。みんなで飼い主レベルをアップしよう！' }
+  { text: '過去に出題されたクイズの中から超難問を集めてみたよ。あなたは何問正解できるかな？' }
 ]
 
 const useStyles = createStyles((theme) => ({
@@ -23,12 +23,13 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'center',
     textAlign: 'left',
     borderRadius: theme.radius.md,
-    height: 120,
+    height: 90,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
   },
 }));
 
-export default function Howto() {
+
+export default function Challenge() {
   const {classes, theme} = useStyles();
 
   const items = data.map((item) => (
@@ -41,7 +42,7 @@ export default function Howto() {
 
   return (
     <Card withBorder radius="md" className={classes.card}>
-      <Text className={classes.title}>あそびかた</Text>
+      <Text className={classes.title}>難問に挑戦</Text>
       <SimpleGrid cols={1} mt="0">
         {items}
       </SimpleGrid>

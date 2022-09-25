@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import type { NextPageWithLayout } from './_app'
-import GridAbout from '@/components/about_about'
-import GridHowto from '@/components/about_howto'
+import Challenge from '@/components/about_challenge'
+import Howto from '@/components/about_howto'
 import Layout from '@/components/layout'
 
 const About: NextPageWithLayout = () => {
@@ -11,8 +11,8 @@ const About: NextPageWithLayout = () => {
         <title>飼い主検定とは｜飼い主検定</title>
       </Head>
       <main>
-        <GridHowto />
-        {/* <GridAbout /> */}
+        <Howto />
+        <Challenge />
       </main>
     </div>
   );
