@@ -3,7 +3,6 @@ import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { createStyles, Card, ActionIcon, Group, Text, Badge, Grid, Center, Button } from '@mantine/core'
 import Image from 'next/image'
-import {TwitterShareButton, TwitterIcon} from "react-share"
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -83,17 +82,12 @@ export default function CommentaryCard({
       </Group>
 
       <Card.Section className={classes.footer}>
-        {/* <Group position="apart"> */}
-          {/* <Text size="xs" color="dimmed">
-            {footer}
-          </Text> */}
           <Center>
           <Button
             component="a"
             target="_blank"
             rel="noopener noreferrer"
             href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
-            // leftIcon={}
             styles={(theme) => ({
               root: {
                 backgroundColor: '#00acee',
@@ -105,15 +99,8 @@ export default function CommentaryCard({
                   backgroundColor: theme.fn.darken('#00acee', 0.05),
                 },
               },
-              // leftIcon: {
-              //   marginRight: 15,
-              // },
             })}
           ><FontAwesomeIcon icon={faTwitter} />　結果をツイートする
-            {/* <TwitterShareButton url={'https://kainushi-kentei.lolipop.io'} title={'飼い主検定'} via="Kill_In_Sun"
-              related={["Kill_In_Sun", "GatsbyJS"]} hashtags={['飼い主検定']}>
-              <Group><TwitterIcon size={24} />ツイートする</Group>
-            </TwitterShareButton> */}
             </Button>
             </Center>
           {/* <Group spacing={0}>
@@ -130,7 +117,6 @@ export default function CommentaryCard({
               <FontAwesomeIcon icon={faLine} />
             </ActionIcon>
           </Group>  */}
-        {/* </Group> */}
       </Card.Section>
     </Card>
   );

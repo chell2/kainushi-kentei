@@ -35,7 +35,7 @@ export default function PrevFirst(props: any) {
   const router = useRouter()
   const array = props.props.data
   const firstHalf = array.slice(0, 5)
-  
+
   const firstPrevItems = firstHalf.map((data: any) => (
     <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
       {
@@ -44,6 +44,12 @@ export default function PrevFirst(props: any) {
       },"preview"
     )}>
       <Group position="apart">
+        <Text size="md" weight="bold" mt={1}>{
+          (() => {
+            if (data.TableName == "dog" )
+              return <p>🐶</p>
+            else return <p>🐱</p>
+          })()}</Text>
         <Text size="md" weight="bold" mt={1}>
           難易度
           {
