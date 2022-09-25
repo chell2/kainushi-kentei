@@ -91,7 +91,7 @@ export default function CommentaryCard({
             component="a"
             target="_blank"
             rel="noopener noreferrer"
-            href="http://twitter.com/intent/tweet?text=正解！明日もがんばろう&url=https://kainushi-kentei.vercel.app&via=chell2282&related=chell2282&hashtags=飼い主検定"
+            href="http://twitter.com/intent/tweet?text=正解！明日もがんばろう&url=https://kainushi-kentei.vercel.app/judgment&via=chell2282&related=chell2282&hashtags=飼い主検定"
             // leftIcon={}
             styles={(theme) => ({
               root: {
