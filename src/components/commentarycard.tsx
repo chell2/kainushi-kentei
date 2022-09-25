@@ -1,8 +1,9 @@
 import { faTwitter, faInstagram, faTiktok, faLine } from '@fortawesome/free-brands-svg-icons'
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { createStyles, Card, ActionIcon, Group, Text, Badge, Grid, Center } from '@mantine/core'
+import { createStyles, Card, ActionIcon, Group, Text, Badge, Grid, Center, Button } from '@mantine/core'
 import Image from 'next/image'
+import {TwitterShareButton, TwitterIcon} from "react-share"
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -86,7 +87,33 @@ export default function CommentaryCard({
           <Text size="xs" color="dimmed">
             {footer}
           </Text>
-          <a href="https://twitter.com/intent/tweet?button_hashtag=飼い主検定&ref_src=twsrc%5Etfw" className="twitter-hashtag-button" data-show-count="false">Tweet #飼い主検定</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+          <Button
+            component="a"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://twitter.com/intent/tweet?text=正解！明日もがんばろう&url=https://kainushi-kentei.vercel.app&via=chell2282&related=chell2282&hashtags=飼い主検定"
+            // leftIcon={}
+            styles={(theme) => ({
+              root: {
+                backgroundColor: '#00acee',
+                border: 0,
+                height: 30,
+                paddingLeft: 12,
+                paddingRight: 12,
+                '&:hover': {
+                  backgroundColor: theme.fn.darken('#00acee', 0.05),
+                },
+              },
+              // leftIcon: {
+              //   marginRight: 15,
+              // },
+            })}
+          ><FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+            {/* <TwitterShareButton url={'https://kainushi-kentei.lolipop.io'} title={'飼い主検定'} via="Kill_In_Sun"
+              related={["Kill_In_Sun", "GatsbyJS"]} hashtags={['飼い主検定']}>
+              <Group><TwitterIcon size={24} />ツイートする</Group>
+            </TwitterShareButton> */}
+          </Button>
           <Group spacing={0}>
             <ActionIcon>
               <FontAwesomeIcon icon={faTwitter} />
