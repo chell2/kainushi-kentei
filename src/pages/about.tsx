@@ -12,7 +12,7 @@ const About: NextPageWithLayout = () => {
       </Head>
       <main>
         <GridHowto />
-        <GridAbout />
+        {/* <GridAbout /> */}
       </main>
     </div>
   );

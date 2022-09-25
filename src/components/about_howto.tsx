@@ -1,7 +1,7 @@
 import { createStyles, Card, Text, SimpleGrid } from '@mantine/core';
 
 const data = [
-  { text: '「今日の問題」から "犬の検定" または "猫の検定" が選べます。日替わりでクイズが出題されるので、３択から正解を選んで回答してね！' }
+  { text: '犬や猫に関するクイズが毎日１問出題されるよ！「今日の問題」から “犬の検定” または “猫の検定” を選んでね。みんなで飼い主レベルをアップしよう！' }
 ]
 
 const useStyles = createStyles((theme) => ({
