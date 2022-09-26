@@ -54,7 +54,7 @@ const CatQuiz: NextPageWithLayout = (props:any) => {
         <Card withBorder radius="md" className={classes.card}>
           <Group>
             <FontAwesomeIcon icon={faCat} size="lg" color={theme.colors["indigo"][6]} />
-            <Text><p className="font-title">猫の検定</p></Text>
+            <Text><p className="font-title">猫の検定：今日の問題</p></Text>
           </Group>
           <SimpleGrid cols={1} mt="md">
             <Card>

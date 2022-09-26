@@ -1,4 +1,4 @@
-import { faCat, faDog, faPaw, faPlus, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faCat, faDog, faPaw, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group, Accordion } from '@mantine/core'
 import { useRouter } from 'next/router'
@@ -44,7 +44,7 @@ export default function PrevMore(props: any) {
   const morePrevItems = secondHalf.map((data:any) => (
     <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
       {
-        pathname: "/preview",
+        pathname: "/catprev",
         query: data
       },"preview"
     )}>

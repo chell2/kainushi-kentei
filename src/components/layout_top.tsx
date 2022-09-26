@@ -21,7 +21,7 @@ const TopLayout = ({ children }: Props) => {
           <div className="flex mb-2" />
           <Tabs color="cyan" defaultValue="menu1">
             <Tabs.List grow position="apart">
-              <Tabs.Tab value="menu1" onClick={() => router.push("/today")}><p className="font-title">今日の問題</p></Tabs.Tab>
+              <Tabs.Tab value="menu1" onClick={() => router.push("/daily")}><p className="font-title">今日の問題</p></Tabs.Tab>
               <Tabs.Tab value="menu2" onClick={() => router.push("/backnumber")}><p className="font-title">難問に挑戦</p></Tabs.Tab>
               <Tabs.Tab value="menu3" onClick={() => router.push("/about")}><p className="font-title">あそびかた</p></Tabs.Tab>
             </Tabs.List>

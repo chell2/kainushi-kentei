@@ -42,7 +42,7 @@ export default function PrevFirst(props: any) {
   const firstPrevItems = firstHalf.map((data: any) => (
     <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
       {
-        pathname: "/preview",
+        pathname: "/dogprev",
         query: data
       },"preview"
     )}>
@@ -88,7 +88,7 @@ export default function PrevFirst(props: any) {
   return (
     <>
       <Card withBorder radius="md" className={classes.card}>
-        <Text className={classes.title}>難問にチャレンジ!!!!</Text>
+        <Text className={classes.title}>超難問を解いてみよう!!!!</Text>
         <SimpleGrid cols={1} mt="md">
           {firstPrevItems} 
         </SimpleGrid>

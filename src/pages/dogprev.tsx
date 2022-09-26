@@ -1,6 +1,8 @@
-import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
+import { faDog } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { createStyles, Card, Text, SimpleGrid, Container, Center, Group } from '@mantine/core';
 import Head from 'next/head'
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router'
 import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/layout'
 import Choices from '@/components/radio_dog'
@@ -29,19 +31,22 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-const PrevQuiz: NextPageWithLayout = () => {
-  const {classes} = useStyles();
+const DogPrevQuiz: NextPageWithLayout = () => {
+  const {classes, theme} = useStyles();
   const router = useRouter();
   const query = router.query
 
   return (
     <div>
       <Head>
-        <title>過去の問題｜飼い主検定</title>
+        <title>難問に挑戦｜飼い主検定</title>
       </Head>
       <main>
         <Card withBorder radius="md" className={classes.card}>
-          <Text><p className="font-title">過去の問題：犬（or 猫）の検定</p></Text>
+          <Group>
+            <FontAwesomeIcon icon={faDog} size="lg" color={theme.colors["grape"][6]} />
+            <Text><p className="font-title">犬の検定：難問に挑戦</p></Text>
+          </Group>
           <SimpleGrid cols={1} mt="md">
             <Card>
               <Center>
@@ -60,9 +65,9 @@ const PrevQuiz: NextPageWithLayout = () => {
   );
 };
 
-export default PrevQuiz;
+export default DogPrevQuiz;
 
-PrevQuiz.getLayout = function getLayout(page: any) {
+DogPrevQuiz.getLayout = function getLayout(page: any) {
   return (
     <Layout>
       {page}
