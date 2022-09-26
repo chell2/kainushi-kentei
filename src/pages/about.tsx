@@ -1,4 +1,6 @@
-import { createStyles, Card, Text } from '@mantine/core';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {createStyles, Card, Text, Group, Center} from '@mantine/core';
 import Head from 'next/head'
 import type { NextPageWithLayout } from './_app'
 import Challenge from '@/components/about_challenge'
@@ -31,7 +33,7 @@ const useStyles = createStyles((theme) => ({
 }))
 
 const About: NextPageWithLayout = () => {
-  const {classes} = useStyles();
+  const {classes, theme} = useStyles();
   
   return (
     <div>
@@ -40,7 +42,12 @@ const About: NextPageWithLayout = () => {
       </Head>
       <main>
         <Card withBorder radius="md" className={classes.card}>
-          <Text className={classes.title}>あそびかた</Text>
+          <Center>
+            <Text className={classes.title} mb="xs">
+              &nbsp;飼い主検定 の あそびかた&nbsp;
+              <FontAwesomeIcon icon={faGraduationCap} size="lg" />
+            </Text>
+          </Center>
           <Howto />
           <Challenge />
         </Card>

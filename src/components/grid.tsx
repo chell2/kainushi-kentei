@@ -63,7 +63,7 @@ export default function Grid() {
       <Center>
         <Text className={classes.title}>今日の問題にチャレンジ!!!!</Text>
       </Center>
-      <SimpleGrid cols={2}>
+      <SimpleGrid cols={2} mt="xs">
         {items}
       </SimpleGrid>
     </Card>
