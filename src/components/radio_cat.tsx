@@ -2,7 +2,7 @@ import { Radio,Button, Center } from '@mantine/core'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-export default function Choices({choice1, choice2, choice3, answer, commentary, id}: any) {
+export default function CatChoices({choice1, choice2, choice3, answer, commentary, id}: any) {
   const router = useRouter()
   const [value, setValue] = useState('react')
   const sendAnswer = async () => {

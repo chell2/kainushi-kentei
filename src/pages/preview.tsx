@@ -1,11 +1,12 @@
-import { faCat } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDog } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createStyles, Card, Text, SimpleGrid, Container, Center, Group } from '@mantine/core';
-import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/layout'
 import CatChoices from '@/components/radio_cat'
+import DogChoices from '@/components/radio_dog'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -31,52 +32,46 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch('https://animal-police.sub.jp/kainusikentei_backend/today.php?type=cat')
-  const data = await res.json()
-
-  return {
-    props: {
-      data,
-    },
-  }
-}
-
-const CatQuiz: NextPageWithLayout = (props:any) => {
+const PrevQuiz: NextPageWithLayout = () => {
   const {classes, theme} = useStyles();
+  const router = useRouter();
+  const query = router.query
 
   return (
     <div>
       <Head>
-        <title>猫の検定｜飼い主検定</title>
+        <title>難問に挑戦｜飼い主検定</title>
       </Head>
       <main>
         <Card withBorder radius="md" className={classes.card}>
           <Group>
-            <FontAwesomeIcon icon={faCat} size="lg" color={theme.colors["indigo"][6]} />
-            <Text><p className="font-title">猫の検定：今日の問題</p></Text>
+            <FontAwesomeIcon icon={faDog} size="lg" color={theme.colors["grape"][6]} />
+            <Text><p className="font-title">犬の検定：難問に挑戦</p></Text>
           </Group>
           <SimpleGrid cols={1} mt="md">
             <Card>
               <Center>
                 <Text size="md" weight="bold" mt={1}>
-                  <p className="font-title">{props.data[0]["question"]}</p>
+                  <p className="font-title">{query["question"]}</p>
                 </Text>
               </Center>
             </Card>
           </SimpleGrid>
           <Container size="sm" px="xs">
-            <CatChoices choice1={props.data[0]["choice001"]} choice2={props.data[0]["choice002"]} choice3={props.data[0]["choice003"]} answer={props.data[0]["answer"]} commentary={props.data[0]["commentary"]} />
+            <DogChoices choice1={query["choice001"]} choice2={query["choice002"]} choice3={query["choice003"]} answer={query["answer"]} commentary={query["commentary"]} category={query["TableName"]} />
           </Container>
+          {/* <Container size="sm" px="xs">
+            <CatChoices choice1={query["choice001"]} choice2={query["choice002"]} choice3={query["choice003"]} answer={query["answer"]} commentary={query["commentary"]} category={query["TableName"]} />
+          </Container> */}
         </Card>
       </main>
     </div>
   );
 };
 
-export default CatQuiz;
+export default PrevQuiz;
 
-CatQuiz.getLayout = function getLayout(page: any) {
+PrevQuiz.getLayout = function getLayout(page: any) {
   return (
     <Layout>
       {page}
