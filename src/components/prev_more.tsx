@@ -1,4 +1,6 @@
-import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group, Accordion } from '@mantine/core'
+import { faCat, faDog, faPaw } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group, Accordion} from '@mantine/core'
 import {useRouter} from 'next/router'
 import {useState} from 'react'
 
@@ -46,6 +48,14 @@ export default function PrevMore(props: any) {
       },"preview"
     )}>
       <Group position="apart">
+        <Text mt={1}>{
+          (() => {
+            if (data.TableName == "dog")
+              return <FontAwesomeIcon icon={faDog} size="lg" color={theme.colors["grape"][6]} />
+            else if (data.TableName == "cat")
+              return <FontAwesomeIcon icon={faCat} size="lg" color={theme.colors["indigo"][6]} />
+            else return <FontAwesomeIcon icon={faPaw} size="lg" color={theme.colors["gray"][6]} />
+          })()}</Text>
         <Text size="md" weight="bold" mt={1}>
           難易度
           {

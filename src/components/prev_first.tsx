@@ -46,7 +46,7 @@ export default function PrevFirst(props: any) {
       },"preview"
     )}>
       <Group position="apart">
-        <Text size="md" weight="bold" mt={1}>{
+        <Text mt={1}>{
           (() => {
             if (data.TableName == "dog")
               return <FontAwesomeIcon icon={faDog} size="lg" color={theme.colors["grape"][6]} />
