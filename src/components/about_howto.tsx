@@ -23,13 +23,13 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'left',
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.lg,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
   },
 }));
 
 export default function Howto() {
-  const {classes, theme} = useStyles();
+  const {classes} = useStyles();
 
   const items = data.map((item) => (
     <Card key={item.text} className={classes.item}>
