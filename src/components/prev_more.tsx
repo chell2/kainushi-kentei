@@ -1,8 +1,8 @@
-import { faCat, faDog, faPaw } from '@fortawesome/free-solid-svg-icons'
+import { faCat, faDog, faPaw, faPlus, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group, Accordion} from '@mantine/core'
-import {useRouter} from 'next/router'
-import {useState} from 'react'
+import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group, Accordion } from '@mantine/core'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -21,10 +21,11 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.lg,
     height: 90,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     transition: 'box-shadow 150ms ease, transform 100ms ease',
+    boxShadow: `${theme.shadows.xs} !important`,
 
     '&:hover': {
       boxShadow: `${theme.shadows.md} !important`,
@@ -87,9 +88,14 @@ export default function PrevMore(props: any) {
   ))
 
   return (
-    <Accordion value={value} onChange={setValue}>
+    <Accordion
+      value={value}
+      onChange={setValue}
+      chevron={<FontAwesomeIcon icon={faAngleDown} />}
+      chevronPosition="left"
+    >
       <Accordion.Item value="item-1">
-        <Accordion.Control>もっと見る</Accordion.Control>
+        <Accordion.Control><p className="font-title">もっと見る</p></Accordion.Control>
         <Accordion.Panel>
           <Card withBorder radius="md" className={classes.card}>
             <SimpleGrid cols={1} mt="md">

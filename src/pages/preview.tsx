@@ -1,12 +1,9 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
 import Head from 'next/head'
 import { useRouter } from "next/router"
 import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/layout'
 import Choices from '@/components/radio_dog'
-library.add(faCat, faDog)
 
 const useStyles = createStyles((theme) => ({
   card: {

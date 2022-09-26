@@ -1,7 +1,7 @@
 import { faCat, faDog, faPaw } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group } from '@mantine/core'
-import {useRouter} from 'next/router'
+import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group } from '@mantine/core'
+import { useRouter } from 'next/router'
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -20,10 +20,11 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.lg,
     height: 90,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     transition: 'box-shadow 150ms ease, transform 100ms ease',
+    boxShadow: `${theme.shadows.xs} !important`,
 
     '&:hover': {
       boxShadow: `${theme.shadows.md} !important`,
