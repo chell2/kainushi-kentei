@@ -48,40 +48,39 @@ export default function PrevMore(props: any) {
       },"preview"
     )}>
       <Group position="apart">
-        <Text mt={1}>{
+        <Text mb={5}>{
           (() => {
             if (data.TableName == "dog")
               return <FontAwesomeIcon icon={faDog} size="lg" color={theme.colors["grape"][6]} />
             else if (data.TableName == "cat")
               return <FontAwesomeIcon icon={faCat} size="lg" color={theme.colors["indigo"][6]} />
             else return <FontAwesomeIcon icon={faPaw} size="lg" color={theme.colors["gray"][6]} />
-          })()}</Text>
-        <Text size="md" weight="bold" mt={1}>
-          難易度
+          })()}
+        </Text>
+        <Text size="sm" weight="bold" mb={5} className={classes.title}>
           {
             (() => {
                 if (10 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
-                  return <p>🔥🔥🔥🔥🔥</p>
+                  return <p>難易度 🔥🔥🔥🔥🔥</p>
                 else if (20 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
-                  return <p>🔥🔥🔥🔥</p>
+                  return <p>難易度 🔥🔥🔥🔥</p>
                 else if (40 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
-                  return <p>🔥🔥🔥</p>
+                  return <p>難易度 🔥🔥🔥</p>
                 else if (60 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
-                  return <p>🔥🔥</p>
+                  return <p>難易度 🔥🔥</p>
                 else if (100 >= (Math.round(data.correct_count / data.accesses_count * 1000))/10)
-                  return <p>🔥</p>
-              else return <p>🔥🔥🔥🔥🔥</p>
+                  return <p>難易度 🔥</p>
+              else return <p>難易度 🔥🔥🔥🔥🔥</p>
             })()
           }
         </Text>
-        <Anchor size="xs" color="dimmed">
+        <Text underline size="xs" color="dimmed" mb={4}>
           正解率 {(data.correct_count / data.accesses_count * 100)
             ? (Math.round(data.correct_count / data.accesses_count * 1000))/10
             : '0' }%
-        </Anchor>
+        </Text>
       </Group>
-      {/* <data.icon color={theme.colors[item.color][4]}  /> */}
-      <Text size="sm" mt={0} mb={4}>
+      <Text size="sm" mt={1} mb={3}>
         {data.question}
       </Text>
     </UnstyledButton>
