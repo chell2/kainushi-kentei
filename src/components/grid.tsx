@@ -1,9 +1,7 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Group, Center } from '@mantine/core'
+import { createStyles, Card, Text, SimpleGrid, UnstyledButton, Center } from '@mantine/core'
 import Link from 'next/link'
-library.add(faCat, faDog)
 
 const data = [
   { title: 'DOG', text: '犬の検定', icon: faDog, color: 'grape', link: '/dogquiz' },

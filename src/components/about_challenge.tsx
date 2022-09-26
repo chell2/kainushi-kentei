@@ -13,7 +13,8 @@ const useStyles = createStyles((theme) => ({
   title: {
     fontFamily: `Zen Maru Gothic, ${theme.fontFamily}`,
     fontWeight: 700,
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: 10
   },
 
   item: {
@@ -23,7 +24,6 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'center',
     textAlign: 'left',
     borderRadius: theme.radius.md,
-    height: 90,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white
   },
 }));
@@ -42,7 +42,7 @@ export default function Challenge() {
 
   return (
     <Card withBorder radius="md" className={classes.card}>
-      <Text className={classes.title}>難問に挑戦</Text>
+      <Text className={classes.title}>『 難問に挑戦 』</Text>
       <SimpleGrid cols={1} mt="0">
         {items}
       </SimpleGrid>

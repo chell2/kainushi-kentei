@@ -1,12 +1,11 @@
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCat, faDog } from '@fortawesome/free-solid-svg-icons'
-import { createStyles, Card, Text, SimpleGrid, Container, Center } from '@mantine/core';
+import { faCat } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { createStyles, Card, Text, SimpleGrid, Container, Center, Group } from '@mantine/core';
 import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/layout'
 import Choices from '@/components/radio_cat'
-library.add(faCat, faDog)
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -44,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 const CatQuiz: NextPageWithLayout = (props:any) => {
-  const {classes} = useStyles();
+  const {classes, theme} = useStyles();
 
   return (
     <div>
@@ -53,7 +52,10 @@ const CatQuiz: NextPageWithLayout = (props:any) => {
       </Head>
       <main>
         <Card withBorder radius="md" className={classes.card}>
-          <Text><p className="font-title">猫の検定</p></Text>
+          <Group>
+            <FontAwesomeIcon icon={faCat} size="lg" color={theme.colors["indigo"][6]} />
+            <Text><p className="font-title">猫の検定</p></Text>
+          </Group>
           <SimpleGrid cols={1} mt="md">
             <Card>
               <Center>

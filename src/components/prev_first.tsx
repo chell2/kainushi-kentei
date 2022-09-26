@@ -1,3 +1,5 @@
+import { faCat, faDog, faPaw } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group } from '@mantine/core'
 import {useRouter} from 'next/router'
 
@@ -46,9 +48,11 @@ export default function PrevFirst(props: any) {
       <Group position="apart">
         <Text size="md" weight="bold" mt={1}>{
           (() => {
-            if (data.TableName == "dog" )
-              return <p>🐶</p>
-            else return <p>🐱</p>
+            if (data.TableName == "dog")
+              return <FontAwesomeIcon icon={faDog} size="lg" color={theme.colors["grape"][6]} />
+            else if (data.TableName == "cat")
+              return <FontAwesomeIcon icon={faCat} size="lg" color={theme.colors["indigo"][6]} />
+            else return <FontAwesomeIcon icon={faPaw} size="lg" color={theme.colors["gray"][6]} />
           })()}</Text>
         <Text size="md" weight="bold" mt={1}>
           難易度
@@ -84,7 +88,7 @@ export default function PrevFirst(props: any) {
   return (
     <>
       <Card withBorder radius="md" className={classes.card}>
-        <Text className={classes.title}>難問にチャレンジ💪</Text>
+        <Text className={classes.title}>難問にチャレンジ!!!!</Text>
         <SimpleGrid cols={1} mt="md">
           {firstPrevItems} 
         </SimpleGrid>
