@@ -40,12 +40,26 @@ export default function PrevFirst(props: any) {
   const firstHalf = array.slice(0, 5)
 
   const firstPrevItems = firstHalf.map((data: any) => (
-    <UnstyledButton key={data.id} className={classes.item} onClick={() => router.push(
-      {
-        pathname: "/dogprev",
-        query: data
-      },"preview"
-    )}>
+    <UnstyledButton
+      key={data.id}
+      className={classes.item}
+      onClick={() => {
+        if (data.TableName == "dog") {
+          router.push(
+            {
+              pathname: "/dogprev",
+              query: data
+            }, "preview"
+          )
+        } else
+          router.push(
+            {
+              pathname: "/catprev",
+              query: data
+            }, "preview"
+          )
+      }}
+    >
       <Group position="apart">
         <Text mb={5}>{
           (() => {
