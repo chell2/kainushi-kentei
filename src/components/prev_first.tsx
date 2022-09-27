@@ -41,7 +41,7 @@ export default function PrevFirst(props: any) {
 
   const firstPrevItems = firstHalf.map((data: any) => (
     <UnstyledButton
-      key={data.id}
+      key={data.newid}
       className={classes.item}
       onClick={() => {
         if (data.TableName == "dog") {

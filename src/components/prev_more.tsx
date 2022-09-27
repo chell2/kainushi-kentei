@@ -43,7 +43,7 @@ export default function PrevMore(props: any) {
 
   const morePrevItems = secondHalf.map((data:any) => (
     <UnstyledButton
-      key={data.id}
+      key={data.newid}
       className={classes.item}
       onClick={() => {
         if (data.TableName == "dog") {
