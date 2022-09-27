@@ -57,7 +57,7 @@ const CatPrevQuiz: NextPageWithLayout = () => {
             </Card>
           </SimpleGrid>
           <Container size="sm" px="xs">
-            <Choices choice1={query["choice001"]} choice2={query["choice002"]} choice3={query["choice003"]} answer={query["answer"]} commentary={query["commentary"]} category={query["TableName"]} />
+            <Choices choice1={query["choice001"]} choice2={query["choice002"]} choice3={query["choice003"]} answer={query["answer"]} commentary={query["commentary"]} category={query["TableName"]} id={query["id"]} />
           </Container>
         </Card>
       </main>
