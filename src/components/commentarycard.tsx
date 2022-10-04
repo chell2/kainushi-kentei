@@ -38,12 +38,114 @@ interface ArticleCardProps {
 
 export default function CommentaryCard({
   image,
-  category,
   title,
   footer,
   commentary,
 }: ArticleCardProps) {
-  const { classes, theme } = useStyles();
+  const {classes, theme} = useStyles()
+  const TweetButton = () => {
+    if (image == '/dog_correct.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/dog_incorrect.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/cat_correct.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_cc&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/cat_incorrect.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=飼い主検定であそぼう！&url=https://kainushi-kentei.vercel.app&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    }
+  }
 
   return (
     <Card withBorder p="lg" radius="md" className={classes.card}>
@@ -51,11 +153,6 @@ export default function CommentaryCard({
         <Image src={image} alt={title} layout="responsive" width={1600} height={900} />
       </Card.Section>
 
-      {/* <Badge>{category}</Badge> */}
-      {/* <Text weight={700} className={classes.title} mt="xs">
-        {title}
-      </Text> */}
-      
       <Text weight={500} className={classes.title} mt="lg">
         答え：　{commentary.answer}
       </Text>
@@ -82,41 +179,23 @@ export default function CommentaryCard({
       </Group>
 
       <Card.Section className={classes.footer}>
-          <Center>
-          <Button
-            component="a"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
-            styles={(theme) => ({
-              root: {
-                backgroundColor: '#00acee',
-                border: 0,
-                height: 30,
-                paddingLeft: 12,
-                paddingRight: 12,
-                '&:hover': {
-                  backgroundColor: theme.fn.darken('#00acee', 0.05),
-                },
-              },
-            })}
-          ><FontAwesomeIcon icon={faTwitter} />　結果をツイートする
-            </Button>
-            </Center>
-          {/* <Group spacing={0}>
-            <ActionIcon>
-              <FontAwesomeIcon icon={faTwitter} />
-            </ActionIcon>
-            <ActionIcon>
-              <FontAwesomeIcon icon={faInstagram} />
-            </ActionIcon>
-            <ActionIcon>
-              <FontAwesomeIcon icon={faTiktok} />
-            </ActionIcon>
-            <ActionIcon>
-              <FontAwesomeIcon icon={faLine} />
-            </ActionIcon>
-          </Group>  */}
+        <Center>
+          <TweetButton />
+        </Center>
+        {/* <Group spacing={0}>
+          <ActionIcon>
+            <FontAwesomeIcon icon={faTwitter} />
+          </ActionIcon>
+          <ActionIcon>
+            <FontAwesomeIcon icon={faInstagram} />
+          </ActionIcon>
+          <ActionIcon>
+            <FontAwesomeIcon icon={faTiktok} />
+          </ActionIcon>
+          <ActionIcon>
+            <FontAwesomeIcon icon={faLine} />
+          </ActionIcon>
+        </Group>  */}
       </Card.Section>
     </Card>
   );

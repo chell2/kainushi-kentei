@@ -14,7 +14,7 @@ const Home: NextPageWithLayout = () => {
         <meta name="twitter:domain" content="kainushi-kentei.vercel.app" />
         <meta name="twitter:title" content="飼い主検定" />
         <meta name="twitter:description" content="Learning Quiz App for Dog and Cat Owners" />
-        <meta name="twitter:image" content="https://kainushi-kentei.vercel.app/_next/image?url=%2Fcard_default.png&w=2048&q=75" />
+        <meta name="twitter:image" content="https://kainushi-kentei.vercel.app/_next/image?url=%2Fcat_incorrect.png&w=2048&q=75" />
       </Head>
       <main>
         <Grid />
