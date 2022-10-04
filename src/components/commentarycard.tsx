@@ -64,12 +64,92 @@ export default function CommentaryCard({
         })}>
         <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
       </Button>
+    } else if (image == '/dog_correct2.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/dog_correct3.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
     } else if (image == '/dog_incorrect.png') {
       return <Button
         component="a"
         target="_blank"
         rel="noopener noreferrer"
         href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/dog_incorrect2.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/dog_incorrect3.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -104,12 +184,92 @@ export default function CommentaryCard({
         })}>
         <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
       </Button>
+    } else if (image == '/cat_correct2.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_cc2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/cat_correct3.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_cc3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
     } else if (image == '/cat_incorrect.png') {
       return <Button
         component="a"
         target="_blank"
         rel="noopener noreferrer"
         href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/cat_incorrect2.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        styles={(theme) => ({
+          root: {
+            backgroundColor: '#00acee',
+            border: 0,
+            height: 30,
+            paddingLeft: 12,
+            paddingRight: 12,
+            '&:hover': {
+              backgroundColor: theme.fn.darken('#00acee', 0.05),
+            },
+          },
+        })}>
+        <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
+      </Button>
+    } else if (image == '/cat_incorrect3.png') {
+      return <Button
+        component="a"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
