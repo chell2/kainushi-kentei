@@ -10,7 +10,7 @@ const Home: NextPageWithLayout = () => {
         <title>飼い主検定</title>
         {/* Twitterカードの設定 */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@chell2282" />
+        <meta name="twitter:site" content="@Sayaka_Kamizono" />
         <meta name="twitter:domain" content="kainushi-kentei.vercel.app" />
         <meta name="twitter:title" content="飼い主検定" />
         <meta name="twitter:description" content="Learning Quiz App for Dog and Cat Owners" />

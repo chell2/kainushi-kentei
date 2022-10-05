@@ -49,7 +49,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -69,7 +69,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc2&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -89,7 +89,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc3&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -109,7 +109,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -129,7 +129,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di2&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -149,7 +149,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_di3&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -169,7 +169,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_cc&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_cc&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -189,7 +189,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_cc2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_cc2&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -209,7 +209,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_cc3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_cc3&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -229,7 +229,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -249,7 +249,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci2&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci2&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -269,7 +269,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci3&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=おしい！！また明日がんばろう！！&url=https://kainushi-kentei.vercel.app/top_ci3&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
@@ -289,7 +289,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=飼い主検定であそぼう！&url=https://kainushi-kentei.vercel.app&via=chell2282&related=chell2282&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=飼い主検定であそぼう！&url=https://kainushi-kentei.vercel.app&via=via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
