@@ -9,7 +9,7 @@ export default function DogChoices({choice1, choice2, choice3, answer, commentar
     if (value == answer) {
       const category = '犬の検定'
       const judgment = '正解'
-      const judgeImgs = ['/dog_correct.png', '/dog_correct2.png', '/dog_correct3.png']
+      const judgeImgs = ['/dog_correct.png', '/dog_correct2.png', '/dog_correct4.png']
       const num = Math.floor(Math.random() * 3)
       const judgeImg = judgeImgs[num]
       const res = await fetch(`/api/update/sendform?type=dog&id=` + id + "&result=" + judgment)

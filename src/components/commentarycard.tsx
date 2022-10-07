@@ -84,7 +84,7 @@ export default function CommentaryCard({
         })}>
         <FontAwesomeIcon icon={faTwitter} />　結果をツイートする
       </Button>
-    } else if (image == '/dog_correct3.png') {
+    } else if (image == '/dog_correct4.png') {
       return <Button
         component="a"
         target="_blank"
