@@ -89,7 +89,7 @@ export default function CommentaryCard({
         component="a"
         target="_blank"
         rel="noopener noreferrer"
-        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc3&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
+        href="http://twitter.com/intent/tweet?text=やったね！！おめでとう！！&url=https://kainushi-kentei.vercel.app/top_dc4&via=Sayaka_Kamizono&related=Sayaka_Kamizono&hashtags=今日の飼い主検定"
         styles={(theme) => ({
           root: {
             backgroundColor: '#00acee',
